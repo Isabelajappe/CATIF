@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  background: #ffffff; 
+  font-family: Arial;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+
+  background: #3f8f2f; /* verde do Figma */
+  padding: 20px 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+  
+}
+
+/* LOGO */
+.logo img {
+  color: white;
+  font-weight: bold;
+  height: 100px; 
+  padding-top: 10px;
+}
+.menu{
+    display: flex;
+    gap: 15px;
+}
+
+.menu a {
+
+ color:white;
+ text-decoration: none;
+ font-size:20px;
+}
+ .btn{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #133816;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 25px;
+}
+
+.bem-vindo{
+    display: flex;
+    background-color: #117d1a;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding: 20px 40px;
+}
+
+.bem-vindo h2{
+    color: #ffffff;
+}
+
+.login-container {
+  width: 380px;
+  margin: 0px auto;
+  /* centraliza */
+  background: white; 
+}
+
+.login{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+    text-align: center;
+ 
+    
+   
+}
+.login input{
+    width: 300px;
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.login button{
+    padding: 10px;
+    width:200px;
+    margin: 15px;
+    background: #3f8f2f;
+    color: white;
+    border: none;
+    border-radius: 12px;
+}
