@@ -168,10 +168,121 @@ a .outrasFormas {
 
 div.entrada input {
     border: 2px solid #0b0f0a;
-    outline: none; /* remove a borda do proprio input */
-    box-sizing: border-box; /* nao deixa o input aumentar de tamanho quando a borda fica maior */
+    outline: none;
+    /* remove a borda do proprio input */
+    box-sizing: border-box;
+    /* nao deixa o input aumentar de tamanho quando a borda fica maior */
 }
 
-div.entrada input:hover { 
+div.entrada input:hover {
     border: 2px solid #3abe19;
+}
+
+/* RODAPÉ */
+.rodape {
+    background-color: #092514;
+    color: #ffffff;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-bottom: 0;
+
+}
+
+.rodape2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+
+.rodape2 a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 15px;
+}
+
+.rodape2 a:hover {
+    color: #3abe19;
+    text-decoration: underline;
+}
+
+a {
+    color: #e8ece9;
+    font: bold;
+}
+
+h3 {
+    color: #e8ece9;
+    margin-left: 15px;
+}
+
+ul {
+    color: transparent;
+}
+
+.rodape-frase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+p.rodape-frase {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*conteudo pag Inicio (index.html) */
+
+.titulo {
+    color: #117d1a;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font: bold;
+    font-size: 40px;
+}
+
+.main-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.bloco-left {
+    Width: 500;
+    margin: 10px;
+}
+
+.menina-catif {
+    width: 500px;
+}
+
+.bloco-right {
+    flex: 1;
+    max-width: 600px;
+}
+
+.text-principal {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font: bold;
+    font-size: larger;
+    color: #117d1a;
+    text-align: justify;
+}
+
+.text-dois {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    text-align: justify;
+}
+
+.text-tres {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    text-align: justify;
 }
