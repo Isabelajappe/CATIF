@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
-<html lang="pt-br"></html>
+<html lang="pt-br">
+
+</html>
 
 <head>
   <meta charset="UTF-8">
@@ -9,40 +11,82 @@
   <link rel="stylesheet" href="style.css">
   <!-- conecta com o CSS -->
 </head>
+
 <body>
 
   <header class="bem-vindo">
 
-   
-    <h1>CATIF ERys e Isys</h1>
 
-    <h2>Seja bem - vindo</h2>
+    <div class="logo">
+      <a href="index.html">
+        <img src="imagens/Logo.png" alt="Logo CATIF">
+
+      </a>
+    </div>
+
+    <h2>Acesse o CATIF!</h2>
 
 
   </header>
 
 
 
-<div class ="login-container">
-    <div class = "login">
+  <div class="login-container">
 
-    <h2>Entrarrr</h2>
 
-    <form>
+    <div class="login">
 
-      <input type="email" placeholder="Email" required>
-      <!-- campo de email -->
+      <img class="logoColorida" src="imagens/imgLogoColorida.png" alt="Logo Colorida Catif">
 
-      <input type="password" placeholder="Senha" required>
-      <!-- campo de senha -->
+      <!-- <h2 class="titEntrar">Entrar</h2>  Estava assim --->
+      <h2 class="titEntrar">LOGIN</h2> <!-- Ao invés de 'Entrar' no início do login, eu coloquei 'LOGIN' apenas " -->
 
-      <button type="submit">Entrar</button>
-      <!-- botão -->
-    
-    </form>
+      <form>
+
+        <div class="entrada">
+          <input type="email" placeholder="Email" required>
+          <!-- campo de email -->
+
+          <input type="password" placeholder="Senha" required>
+          <!-- campo de senha -->
+
+        </div>
+
+
+        <a href="#">
+          <p class="esqueceuSenha">Esqueceu a senha?</p>
+        </a>
+
+
+        <button class="btEntrar" type="submit">Entrar</button>
+        <!-- botão -->
+
+        <div class="outrasFormas">
+          <p>outras formas</p>
+
+          <a class="linkFacebook" href="https://www.facebook.com/?locale=pt_BR">
+            <img class="facebookLogo" src="imagens/facebookLogo.png" alt="facebookLogo">
+          </a>
+
+          <a class="linkGoogle" href="https://www.google.com/">
+            <img class="googleLogo" src="imagens/googleLogo.png" alt="googleLogo">
+          </a>
+
+        </div>
+
+
+
+      </form>
+
+
     </div>
-    
+
+
+
+
+
   </div>
 
 </body>
+
 </html>

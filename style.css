@@ -1,43 +1,51 @@
 body {
-  margin: 0;
-  background: #ffffff; 
-  font-family: Arial;
+    margin: 0;
+    background: #ffffff;
+    font-family: Arial;
 }
 
 /* HEADER */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
 
-  background: #3f8f2f; /* verde do Figma */
-  padding: 20px 40px;
-  padding-left: 100px;
-  padding-right: 100px;
-  
+    background: #3f8f2f;
+    /* verde do Figma */
+    padding: 20px 40px;
+    padding-left: 100px;
+    padding-right: 100px;
+
 }
 
 /* LOGO */
 .logo img {
-  color: white;
-  font-weight: bold;
-  height: 100px; 
-  padding-top: 10px;
+    color: white;
+    font-weight: bold;
+    height: 100px;
+    padding-top: 10px;
 }
-.menu{
+
+.menu {
     display: flex;
     gap: 15px;
 }
 
 .menu a {
 
- color:white;
- text-decoration: none;
- font-size:20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
 }
- .btn{
-    color:white;
+
+/* Alterei as abas/menu para ficar sublinhado quando colocar mouse em*/
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    color: white;
     text-decoration: none;
     font-size: 20px;
     background-color: #133816;
@@ -46,9 +54,16 @@ body {
     padding-bottom: 10px;
     padding-top: 10px;
     border-radius: 25px;
+    border: 2px solid transparent;
+    /*isso serve pro botao nao crescer, nao mexer os outros itens (Éricka)*/
 }
 
-.bem-vindo{
+/*coloquei borda branca no botao de Entrar na pag INICIO (Éricka)*/
+.btn:hover {
+    border: 2px solid #e8ece9;
+}
+
+.bem-vindo {
     display: flex;
     background-color: #117d1a;
     justify-content: space-between;
@@ -57,41 +72,106 @@ body {
     padding: 20px 40px;
 }
 
-.bem-vindo h2{
+.bem-vindo h2 {
     color: #ffffff;
 }
 
 .login-container {
-  width: 380px;
-  margin: 0px auto;
-  /* centraliza */
-  background: white; 
+    width: 380px;
+    margin: 0px auto;
+    /* centraliza */
+    background: white;
 }
 
-.login{
+.login {
     border: 2px solid rgb(0, 0, 0);
     border-radius: 20px;
     width: 400px;
-    height: 400px;
+    height: 550px;
     margin-top: 50px;
     text-align: center;
- 
-    
-   
+
 }
-.login input{
+
+.login input {
     width: 300px;
     border-radius: 15px;
     margin: 10px 0;
     padding: 10px;
 }
 
-.login button{
+
+.login button {
     padding: 10px;
-    width:200px;
+    width: 325px;
     margin: 15px;
     background: #3f8f2f;
     color: white;
-    border: none;
+    border: 2px solid #3f8f2f;
+    /*coloquei borda no botao de Entrar*/
     border-radius: 12px;
+}
+
+/*alterções - Éricka */
+
+.login button:hover {
+    border-color: #0b0f0a;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+.titEntrar {
+    margin-top: 0%;
+    font: bold;
+}
+
+.esqueceuSenha {
+    color: #0b0f0a;
+    margin-top: 0%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+}
+
+.esqueceuSenha:hover {
+    color: #3f8f2f;
+}
+
+.logoColorida {
+    width: 150px;
+    margin-bottom: 0%;
+}
+
+a .outrasFormas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.outrasFormas img {
+    width: 80px;
+    height: 80px;
+}
+
+
+.googleLogo {
+    margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.facebookLogo {
+    margin-top: 0;
+    margin-bottom: 3.5px;
+}
+
+div.entrada input {
+    border: 2px solid #0b0f0a;
+    outline: none; /* remove a borda do proprio input */
+    box-sizing: border-box; /* nao deixa o input aumentar de tamanho quando a borda fica maior */
+}
+
+div.entrada input:hover { 
+    border: 2px solid #3abe19;
 }
