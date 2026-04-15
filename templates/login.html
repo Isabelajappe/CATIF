@@ -8,8 +8,12 @@
   <meta charset="UTF-8">
   <title>Login CATIF</title>
 
-  <link rel="stylesheet" href="style.css">
-  <!-- conecta com o CSS -->
+  <!-- 
+    <link rel="stylesheet" href="style.css">
+  -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
@@ -18,8 +22,10 @@
 
   <header class="bem-vindo">
     <div class="logo">
-      <a href="index.html">
-        <img src="imagens/Logo.png" alt="Logo CATIF">
+      <a href="index">
+        <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
+        <!--  <img src="imagens/Logo.png" alt="Logo CATIF"> -->
+
       </a>
     </div>
     <h2>Acesse o CATIF!</h2>
@@ -31,7 +37,10 @@
   <div class="login-container">
     <div class="login">
 
-      <img class="logoColorida" src="imagens/imgLogoColorida.png" alt="Logo Colorida Catif">
+      <img src="{{ url_for('static', filename='imagens/imgLogoColorida.png') }}">
+
+
+      <!-- <img class="logoColorida" src="imagens/imgLogoColorida.png" alt="Logo Colorida Catif"> -->
 
       <!-- <h2 class="titEntrar">Entrar</h2>  Estava assim --->
       <h2 class="titEntrar">LOGIN</h2> <!-- Ao invés de 'Entrar' no início do login, eu coloquei 'LOGIN' apenas " -->
@@ -57,8 +66,13 @@
         <button class="btEntrar" type="submit">Entrar</button>
 
 
-        <!-- Outras formas -->
+        <!--direciona pra pag de cadastro caso não tenha um Login  -->
+        <h3 class="cadastroText">Não tem uma conta?</h3>
+        <a class="cadastro" href="cadastro">Cadastrar-se</a>
 
+
+
+        <!-- Outras formas       
         <div class="outrasFormas">
           <p>outras formas</p>
 
@@ -68,13 +82,13 @@
 
           <a class="linkGoogle" href="https://www.google.com/">
             <img class="googleLogo" src="imagens/googleLogo.png" alt="googleLogo">
-          </a>
-
-        </div>
-
-      </form>
-
+          </a> 
+        -->
     </div>
+
+    </form>
+
+  </div>
   </div>
 
   <!-- RODAPÉ -->

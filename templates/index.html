@@ -8,7 +8,11 @@
   <meta charset="UTF-8">
   <title>CATIF - Plataforma de vagas de estágio para estudantes e empresas</title>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- 
+    <link rel="stylesheet" href="style.css">
+  -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
@@ -18,23 +22,28 @@
   <header class="header">
     <div class="logo">
       <!-- coloquei um link na logo do Catif, pra sempre direcionar na pag Inicial/Inicio -->
-      <a href="index.html">
-        <img src="imagens/Logo.png" alt="Logo CATIF">
+      <a href="index">
+        <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
+
+        <!--
+        <img src="imagens/Logo.png" alt="Logo CATIF">        
+      -->
+
       </a>
     </div>
 
     <!-- MENU -->
     <nav class="menu">
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="vagas.html">Vagas</a>
-      <a href="estagio.html">Estágio</a>
+      <a href="index">Início</a>
+      <a href="sobre">Sobre</a>
+      <a href="vagas">Vagas</a>
+      <a href="estagio">Estágio</a>
     </nav>
 
     <div class="acesso-site">
-      <a class="cadastra-se" href="#">Cadastre-se</a>
+      <a class="cadastra-se" href="cadastro">Cadastre-se</a>
       <!-- BOTÃO -->
-      <a href="login.html" class="btn">Entrar</a>
+      <a href="login" class="btn">Entrar</a>
     </div>
 
 

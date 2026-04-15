@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATIF - Perfil de Aluno</title>
+
+    <!-- 
     <link rel="stylesheet" href="style.css">
+  -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
@@ -14,18 +20,20 @@
     <header class="header">
         <div class="logo">
             <!-- coloquei um link na logo do Catif, pra sempre direcionar na pag Inicial/Inicio -->
-            <a href="index.html">
-                <img src="imagens/Logo.png" alt="Logo CATIF">
+            <a href="index">
+                <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
+
+                <!--  <img src="imagens/Logo.png" alt="Logo CATIF"> -->
             </a>
         </div>
 
-        <!-- MENU -->
-        <nav class="menu">
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="vagas.html">Vagas</a>
-            <a href="estagio.html">Estágio</a>
-        </nav>
+         <!-- MENU -->
+    <nav class="menu">
+      <a href="index">Início</a>
+      <a href="sobre">Sobre</a>
+      <a href="vagas">Vagas</a>
+      <a href="estagio">Estágio</a>
+    </nav>
 
         <div class="meu-perfil">
             <!-- BOTÃO -->
@@ -37,7 +45,9 @@
     <div class="bloco-todo">
 
         <div class="perfil-alunoo">
-            <img class="ft-perfil" src="imagens/fotoPerfil.jpg" alt="foto de perfil">
+            <img src="{{ url_for('static', filename='imagens/fotoPerfil.png') }}">
+
+            <!--    <img class="ft-perfil" src="imagens/fotoPerfil.jpg" alt="foto de perfil"> -->
 
             <h1 class="nome-aluno">Manuela Camargo</h1>
             <h2>Técnico em Informática</h2>
@@ -48,7 +58,8 @@
 
         <div class="sobre-mim">
             <h2>Sobre mim</h2>
-            <p class="prg-black">Sou estudante do último ano do Curso Técnico em Informática Integrado ao Ensino Médio do Instituto
+            <p class="prg-black">Sou estudante do último ano do Curso Técnico em Informática Integrado ao Ensino Médio
+                do Instituto
                 Federal Sul-rio-grandense – Câmpus Sapiranga. Desenvolvi interesse pela área tecnológica e pela
                 resolução de problemas. Possuo mais de um ano de experiência como estagiária na Coordenadoria de
                 Tecnologia da Informação na própria instituição, atuando com suporte técnico, atendimento e solução
@@ -61,7 +72,8 @@
 
         <div class="objetivos">
             <h2>Objetivos</h2>
-            <p class="prg-black">Atuar como Técnico em Informática, prestando suporte técnico, manutenção de computadores e auxiliando
+            <p class="prg-black">Atuar como Técnico em Informática, prestando suporte técnico, manutenção de
+                computadores e auxiliando
                 no
                 desenvolvimento de soluções tecnológicas.</p>
             <button class="bt-editar">Editar</button>
@@ -107,7 +119,7 @@
             <h2>Habilidades Técnicas</h2>
             <p class="prg-black">Montagem e manutenção de computadores
                 Instalação e configuração de sistemas operacionais
-                Pacote Office (Word, Excel, PowerPoint) 
+                Pacote Office (Word, Excel, PowerPoint)
                 Redes de computadores (básico)
                 Lógica de programação
                 Conhecimento em linguagens: HTML, CSS e Java

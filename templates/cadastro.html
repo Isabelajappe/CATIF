@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<!-- pag Estagio -->
 
 <html lang="pt-br">
-<!-- idioma -->
+
+</html>
 
 <head>
     <meta charset="UTF-8">
-    <title>Vagas</title>
+    <title>Cadastro CATIF</title>
+
 
     <!-- 
     <link rel="stylesheet" href="style.css">
@@ -19,50 +20,91 @@
 
 <body>
 
+    <!-- CABEÇALHO -->
 
-    <header class="header">
-
-
+    <header class="bem-vindo">
         <div class="logo">
             <a href="index">
                 <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
 
-                <!--  <img src="imagens/Logo.png" alt="Logo CATIF"> -->
+                <!-- <img src="imagens/Logo.png" alt="Logo CATIF">  -->
             </a>
         </div>
-
-        <!-- MENU -->
-        <nav class="menu">
-            <a href="index">Início</a>
-            <a href="sobre">Sobre</a>
-            <a href="vagas">Vagas</a>
-            <a href="estagio">Estágio</a>
-
-            <div id="barra-pesquisa">
-                <input type="text" name="" id="txtBusca" placeholder="Pesquise sua vaga aqui...">
-                <button class="bt-Busca">
-                    Buscar
-                    <!-- <img class="imgLupa" src="imagens/lupaPesquisa.jpg" alt="lupa"> -->
-                </button>
-
-            </div>
-
-        </nav>
-
-        <!-- BOTÃO -->
-        <a href="/login" class="btn">Entrar</a>
-
+        <h2>Cadastre-se no CATIF!</h2>
     </header>
 
-    <!--CONTEUDO DA PAGINA--->
+
+    <!-- LOGIN -->
+
+    <div class="login-container">
+        <div class="login">
+
+            <img src="{{ url_for('static', filename='imagens/imgLogoColorida.png') }}">
+
+            <!---
+            <img class="logoColorida" src="imagens/imgLogoColorida.png" alt="Logo Colorida Catif">
+            -->
+
+
+            <!-- <h2 class="titEntrar">Entrar</h2>  Estava assim --->
+            <h2 class="titEntrar">Criar conta</h2>
+            <!-- Ao invés de 'Entrar' no início do login, eu coloquei 'LOGIN' apenas " -->
+
+
+            <form method="post" action="/cadastro">
+
+                <div class="entrada">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <!-- campo de email -->
+
+                    <input type="password" name="senha" placeholder="Senha" required>
+                    <!-- campo de senha -->
+
+                    <input type="password" name="confirmar_senha" placeholder="Confirme a senha" required>
+                    <!-- campo de senha -->
+
+                </div>
+
+
+                <!-- botão -->
+                <button class="btEntrar" type="submit">CADASTRAR-SE</button>
+
+
+                <!-- Outras formas -->
+
+                <div class="outrasFormas">
+                    <p>outras formas</p>
+
+
+                    <!--
+
+                    
+                    <a class="linkFacebook" href="#">
+                        <img src="{{ url_for('static', filename='imagens/linkFacebook.png') }}">
+
+                         <img class="facebookLogo" src="imagens/facebookLogo.png" alt="facebookLogo"> 
+                    </a>
+
+
+                         <a class="linkGoogle" href="#">
+
+                        <img src="{{ url_for('static', filename='imagens/googleLogo.png') }}">
+
+                        <img class="googleLogo" src="imagens/googleLogo.png" alt="googleLogo">  
+
+
+                        </a>
+                  -->
 
 
 
 
+                </div>
 
+            </form>
 
-
-
+        </div>
+    </div>
 
     <!-- RODAPÉ -->
     <footer class="rodape">
@@ -113,6 +155,10 @@
         </div>
 
     </footer>
+
+
+
+
 
 
 </body>

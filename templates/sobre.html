@@ -8,7 +8,12 @@
     <meta charset="UTF-8">
     <title>Sobre o CATIF</title>
 
+    <!-- 
     <link rel="stylesheet" href="style.css">
+  -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 
 </head>
 
@@ -19,21 +24,23 @@
 
 
         <div class="logo">
-            <a href="index.html">
-                <img src="imagens/Logo.png" alt="Logo CATIF">
+            <a href="index">
+                <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
+
+                <!-- <img src="imagens/Logo.png" alt="Logo CATIF"> -->
             </a>
         </div>
 
         <!-- MENU -->
         <nav class="menu">
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="vagas.html">Vagas</a>
-            <a href="estagio.html">Estágio</a>
+            <a href="index">Início</a>
+            <a href="sobre">Sobre</a>
+            <a href="vagas">Vagas</a>
+            <a href="estagio">Estágio</a>
         </nav>
 
         <!-- BOTÃO -->
-        <a href="login.html" class="btn">Entrar</a>
+        <a href="login" class="btn">Entrar</a>
 
     </header>
 
@@ -42,7 +49,9 @@
     <div class="main-conteudo">
 
         <div class="bloco-left">
-            <img class="menina-catif" src="imagens/elementoCatif.png" alt="menina-catif">
+            <img src="{{ url_for('static', filename='imagens/elementoCatif.png') }}">
+
+            <!--   <img class="menina-catif" src="imagens/elementoCatif.png" alt="menina-catif"> -->
         </div>
 
 

@@ -344,9 +344,11 @@ nav.menu a {
 .bt-Busca {
     border: none;
     outline: none;
-    background-color: #ffffff;
+    background-color: #189f1a;
     margin-left: 50px;
     border-radius: 50px;
+    color: white;
+    padding: 10px;
 }
 
 .cadastro {
@@ -449,4 +451,13 @@ nav.menu a {
 
 .h3-black {
     color: #389015;
+}
+
+.cadastro {
+    color: #000;
+    font-weight: 700;
+}
+
+.cadastroText {
+    color: #12741a;
 }
