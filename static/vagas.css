@@ -1,0 +1,27 @@
+/* BARRA DE PESQUISA - PAG VAGAS (Éricka)*/
+
+#barra-pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 300px;
+    margin-left: 100px;
+    border: 3px solid white;
+}
+
+#barra-pesquisa:hover {
+    border: 3px solid rgb(16, 124, 39);
+    transition: 1.5s;
+}
+
+#txtBusca {
+    background-color: transparent;
+    padding-left: 3px;
+    font-size: 15px;
+    color: #117d1a;
+    margin-left: 5px;
+    border: none;
+    outline: none;
+}

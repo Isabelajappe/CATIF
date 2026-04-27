@@ -14,6 +14,7 @@
   -->
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}">
 
 
 </head>
@@ -71,35 +72,17 @@
 
 
                 <!-- Outras formas -->
+<div class="outrasFormas">
+    <p>outras formas</p>
+    
+    <a class="linkFacebook" href="#">
+        <img class="facebookLogo" src="{{ url_for('static', filename='imagens/linkFacebook.png') }}" alt="facebookLogo">
+    </a>
 
-                <div class="outrasFormas">
-                    <p>outras formas</p>
-
-
-                    <!--
-
-                    
-                    <a class="linkFacebook" href="#">
-                        <img src="{{ url_for('static', filename='imagens/linkFacebook.png') }}">
-
-                         <img class="facebookLogo" src="imagens/facebookLogo.png" alt="facebookLogo"> 
-                    </a>
-
-
-                         <a class="linkGoogle" href="#">
-
-                        <img src="{{ url_for('static', filename='imagens/googleLogo.png') }}">
-
-                        <img class="googleLogo" src="imagens/googleLogo.png" alt="googleLogo">  
-
-
-                        </a>
-                  -->
-
-
-
-
-                </div>
+    <a class="linkGoogle" href="#">
+        <img class="googleLogo" src="{{ url_for('static', filename='imagens/googleLogo.png') }}" alt="googleLogo">
+    </a>
+</div>
 
             </form>
 
@@ -155,12 +138,3 @@
         </div>
 
     </footer>
-
-
-
-
-
-
-</body>
-
-</html>

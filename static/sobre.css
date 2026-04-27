@@ -1,0 +1,55 @@
+
+/*TITULO SOBRE*/
+.titulo {
+    color: #117d1a;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font: bold;
+    font-size: 40px;
+align-items: left;
+   
+}
+
+.main-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.bloco-left {
+    Width: 500;
+    margin: 10px;
+}
+
+.menina-catif {
+    width: 500px;
+}
+
+.bloco-right {
+    flex: 1;
+    max-width: 600px;
+}
+
+.text-principal {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font: bold;
+    font-size: larger;
+    color: #117d1a;
+    text-align: justify;
+}
+
+.text-dois {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    text-align: justify;
+}
+
+.text-tres {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    text-align: justify;
+}
+
