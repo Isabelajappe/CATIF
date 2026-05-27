@@ -48,13 +48,13 @@
       <h2 class="titEntrar">LOGIN</h2> <!-- Ao invés de 'Entrar' no início do login, eu coloquei 'LOGIN' apenas " -->
 
 
-      <form>
+      <form method="POST" action="/login">
 
         <div class="entrada">
-          <input type="email" placeholder="Email" required>
+          <input type="email" name="email" placeholder="Email" required>
           <!-- campo de email -->
 
-          <input type="password" placeholder="Senha" required>
+          <input type="password" name="senha" placeholder="Senha" required>
           <!-- campo de senha -->
 
         </div>

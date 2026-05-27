@@ -1,0 +1,64 @@
+.pessoaimagem-icon {
+  height: 400px;
+  flex: 1;
+  position: relative;
+  max-width: 500px;
+  overflow: hidden;
+  object-fit: cover;
+  min-width: 370px;
+}
+
+.sobre-app-catif,
+.texto {
+  display: flex;
+  align-items: flex-start;
+}
+
+.texto {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--padding-2) var(--padding-0) 16.9px;
+  box-sizing: border-box;
+  gap: 10px;
+  min-width: 370px;
+  max-width: 700px;
+  text-align: left;
+  font-size: 54.3px;
+  color: var(--color-forestgreen-200);
+  font-family: var(--font-inter);
+}
+
+.sobre-app-catif {
+  align-self: stretch;
+}
+
+.sobre-o-catif {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  text-shadow: var(--text-shadow-1);
+}
+
+.cont-texto {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+  text-align: justify;
+  font-size: 27.1px;
+  color: var(--color-black);
+}
+
+.conteudo {
+  width: 100%;
+  background-color: var(--color-white);
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 30px var(--padding-2) 30.1px var(--padding-0);
+  box-sizing: border-box;
+  gap: 38px;
+  max-width: 1440px;
+}

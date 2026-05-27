@@ -8,7 +8,7 @@ def conectar_db():
         host="localhost",
         user="root",
         password="",
-        database="catif"
+        database="catif" #banco de dados, tem q mudar para o 'catif' #
     )
 
 @app.route("/")
@@ -31,10 +31,26 @@ def sobre():
 def vagas():
     return render_template("vagas.html")
 
+@app.route("/vaga/<int:id>")
+def vaga_detalhes(id):
+
+    conexao = conectar_db()
+    cursor = conexao.cursor(dictionary=True)
+
+    sql = "SELECT * FROM vaga WHERE id_vaga = %s"
+    cursor.execute(sql, (id,))
+
+    vaga = cursor.fetchone()
+
+    cursor.close()
+    conexao.close()
+
+    return render_template("detalhes_vaga.html", vaga=vaga)
+
+
 @app.route("/estagio")
 def estagio():
     return render_template("estagio.html")
-
 
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
@@ -61,7 +77,7 @@ def cadastro():
 
             sql = "INSERT INTO usuarios (email, senha) VALUES (%s, %s)"
             dados = (email, senha)
-
+    
             cursor.execute(sql, dados)
             conexao.commit()
 
@@ -74,6 +90,7 @@ def cadastro():
 
 @app.route("/login")
 def login():
+    
     return render_template("login.html")
 
 @app.route("/perfilAluno")

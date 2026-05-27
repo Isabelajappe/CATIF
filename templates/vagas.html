@@ -1,115 +1,202 @@
 <!DOCTYPE html>
-<!-- pag Estagio -->
-
-<html lang="pt-br">
-<!-- idioma -->
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Vagas</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <!-- 
-    <link rel="stylesheet" href="style.css">
-  -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='vagas.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vagas.css') }}">
 
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Akshar:wght@400&display=swap" />
 </head>
 
 <body>
+    <div class="pagina-ver-vagas">
+        <header class="header">
 
-
-    <header class="header">
-
-
-        <div class="logo">
             <a href="index">
-                <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
 
-                <!--  <img src="imagens/Logo.png" alt="Logo CATIF"> -->
+                <img class="logo-icon2" alt="" src="{{ url_for('static', filename='imagens/logo.png') }}" />
+
             </a>
-        </div>
 
-        <!-- MENU -->
-        <nav class="menu">
-            <a href="index">Início</a>
-            <a href="sobre">Sobre</a>
-            <a href="vagas">Vagas</a>
-            <a href="estagio">Estágio</a>
+            <nav class="cabealho">
+                <div class="bt-inicio" id="btInicioContainer">
+                    <a class="inicio" href="index">Inicio</a>
+                </div>
+                <div class="bt-sobre">
+                    <a class="inicio" href="sobre">Sobre</a>
+                </div>
+                <div class="bt-sobre">
+                    <a class="inicio" href="estagio">Estágio</a>
+                </div>
+                <div class="bt-sobre">
+                    <a class="inicio" href="vagas">Vagas</a>
+                </div>
+            </nav>
+            <button class="bt-entrar">
+                <a class="entrar" href="login">ENTRAR</a>
 
-            <div id="barra-pesquisa">
-                <input type="text" name="" id="txtBusca" placeholder="Pesquise sua vaga aqui...">
-                <button class="bt-Busca">
-                    Buscar
-                    <!-- <img class="imgLupa" src="imagens/lupaPesquisa.jpg" alt="lupa"> -->
-                </button>
+            </button>
+        </header>
+        <main class="conteudo">
+            <div class="frame-vagas1">
+                <section class="card-vaga">
+                    <div class="estragio">
+                        <h2 class="estagio2">Estágio</h2>
+                    </div>
+                    <div class="texto-vaga">
+                        <div class="informtica">INFORMÁTICA</div>
+                        <div class="sapiranga">SAPIRANGA</div>
+                        <h2 class="presencial">PRESENCIAL</h2>
+                        <h2 class="bolsa-auxlio-r">Bolsa Auxílio: R$ 700</h2>
+                    </div>
 
+                    <button class="btver" id="btVer">
+                        <a class="ver" href="{{ url_for('vaga_detalhes', id=1) }}">
+                            Ver
+                        </a>
+                    </button>
+                </section>
+                <section class="card-vaga">
+                    <div class="estragio">
+                        <h2 class="estagio2">Estágio</h2>
+                    </div>
+                    <div class="texto-vaga">
+                        <div class="informtica">INFORMÁTICA</div>
+                        <div class="sapiranga">SAPIRANGA</div>
+                        <h2 class="presencial">PRESENCIAL</h2>
+                        <h2 class="bolsa-auxlio-r">Bolsa Auxílio: R$ 700</h2>
+                    </div>
+                    <button class="btver" id="btVer1">
+                        <div class="ver">Ver</div>
+                    </button>
+                </section>
+                <section class="card-vaga">
+                    <div class="estragio">
+                        <h2 class="estagio2">Estágio</h2>
+                    </div>
+                    <div class="texto-vaga">
+                        <div class="informtica">INFORMÁTICA</div>
+                        <div class="sapiranga">SAPIRANGA</div>
+                        <h2 class="presencial">PRESENCIAL</h2>
+                        <h2 class="bolsa-auxlio-r">Bolsa Auxílio: R$ 700</h2>
+                    </div>
+                    <button class="btver" id="btVer2">
+                        <div class="ver">Ver</div>
+                    </button>
+                </section>
             </div>
+            <div class="frame-vagas-2">
+                <section class="card-vaga">
+                    <div class="estragio">
+                        <h2 class="estgio2">Estágio</h2>
+                    </div>
+                    <div class="texto-vaga">
+                        <div class="informtica">INFORMÁTICA</div>
+                        <div class="sapiranga">SAPIRANGA</div>
+                        <h2 class="presencial">PRESENCIAL</h2>
+                        <h2 class="bolsa-auxlio-r">Bolsa Auxílio: R$ 700</h2>
+                    </div>
+                    <button class="btver" id="btVer3">
+                        <div class="ver">Ver</div>
+                    </button>
+                </section>
+                <section class="card-vaga">
+                    <div class="estragio">
+                        <h2 class="estagio2">Estágio</h2>
+                    </div>
+                    <div class="texto-vaga">
+                        <div class="informtica">INFORMÁTICA</div>
+                        <div class="sapiranga">SAPIRANGA</div>
+                        <h2 class="presencial">PRESENCIAL</h2>
+                        <h2 class="bolsa-auxlio-r">Bolsa Auxílio: R$ 700</h2>
+                    </div>
+                    <button class="btver" id="btVer4">
+                        <div class="ver">Ver</div>
+                    </button>
+                </section>
+                <section class="card-vaga">
+                    <div class="estragio">
+                        <h2 class="estagio2">Estágio</h2>
+                    </div>
+                    <div class="texto-vaga">
+                        <div class="informtica">INFORMÁTICA</div>
+                        <div class="sapiranga">SAPIRANGA</div>
+                        <h2 class="presencial">PRESENCIAL</h2>
+                        <h2 class="bolsa-auxlio-r">Bolsa Auxílio: R$ 700</h2>
+                    </div>
 
-        </nav>
+                    <button class="btver" id="btVer5">
+                        <div class="ver">Ver</div>
+                    </button>
+                </section>
+            </div>
+        </main>
+        <div class="footer">
+            <img class="logo-icon2" alt="" src="{{ url_for('static', filename='imagens/logo.png') }}" />
 
-        <!-- BOTÃO -->
-        <a href="/login" class="btn">Entrar</a>
-
-    </header>
-
-    <!--CONTEUDO DA PAGINA--->
-
-
-
-    <!-- RODAPÉ -->
-    <footer class="rodape">
-
-        <div class="rodape2">
-
-            <ul class="sobre-catif">
-                <h3>Sobre o CATIF</h3>
-                <li><a href="#">Equipe</a></li>
-                <li><a href="#">Quem somos</a></li>
-                <li><a href="#">Missão</a></li>
-            </ul>
-
-            <ul class="nosso-site">
-                <h3>Nosso site</h3>
-                <li><a href="#">Vagas recentes</a></li>
-                <li><a href="#">Estagio obrigatório</a></li>
-                <li><a href="#">Recomendações</a></li>
-                <li><a href="#">Novidades</a></li>
-            </ul>
-
-            <ul class="Suporte">
-                <h3>Suporte</h3>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Reportar problema</a></li>
-            </ul>
-
-            <ul class="Sistema">
-                <h3>Sistema</h3>
-                <li><a href="#">Política de privacidade</a></li>
-                <li><a href="#">Termos de Uso</a></li>
-            </ul>
-
-            <ul class="Parcerias">
-                <h3>Parcerias</h3>
-                <li><a href="https://www.ifsul.edu.br/">Instituto Federal Sul-rio-grandense</a></li>
-                <li><a href="https://www.ufrgs.br/site/">UFRGS</a></li>
-                <li><a href="https://www.feevale.br/">Feevale</a></li>
-                <li><a href="https://www.unisinos.br/">Unisinos</a></li>
-                <li><a href="https://www2.faccat.br/portal/">Faccat</a></li>
-                <li><a href="https://www.instagram.com/fly.hubsapiranga/">FlyHub</a></li>
-                <li><a href="https://www.sapiranga.rs.gov.br/">Prefeitura de Sapiranga</a></li>
-            </ul>
-
+            <div class="bt-sobre">
+                <h2 class="inicio">© 2026 CATIF. Todos os direitos reservados.</h2>
+            </div>
         </div>
-        <div class="frase-rodape">
-            <p class="rodape-frase"> &copy; 2026 CATIF. Todos os direitos reservados.</p>
-        </div>
+    </div>
 
-    </footer>
+    <script>
+        var btInicioContainer = document.getElementById("btInicioContainer");
+        if (btInicioContainer) {
+            btInicioContainer.addEventListener("click", function (e) {
+                // Please sync "Pagina Bem vindo" to the project
+            });
+        }
 
+        var btVer = document.getElementById("btVer");
+        if (btVer) {
+            btVer.addEventListener("click", function (e) {
+                // Please sync "Pagina sobre" to the project
+            });
+        }
 
+        var btVer1 = document.getElementById("btVer1");
+        if (btVer1) {
+            btVer1.addEventListener("click", function (e) {
+                // Please sync "Pagina sobre" to the project
+            });
+        }
+
+        var btVer2 = document.getElementById("btVer2");
+        if (btVer2) {
+            btVer2.addEventListener("click", function (e) {
+                // Please sync "Pagina sobre" to the project
+            });
+        }
+
+        var btVer3 = document.getElementById("btVer3");
+        if (btVer3) {
+            btVer3.addEventListener("click", function (e) {
+                // Please sync "Pagina sobre" to the project
+            });
+        }
+
+        var btVer4 = document.getElementById("btVer4");
+        if (btVer4) {
+            btVer4.addEventListener("click", function (e) {
+                // Please sync "Pagina sobre" to the project
+            });
+        }
+
+        var btVer5 = document.getElementById("btVer5");
+        if (btVer5) {
+            btVer5.addEventListener("click", function (e) {
+                // Please sync "Pagina sobre" to the project
+            });
+        }
+    </script>
 </body>
 
 </html>

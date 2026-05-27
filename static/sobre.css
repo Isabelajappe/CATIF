@@ -1,12 +1,11 @@
-
 /*TITULO SOBRE*/
 .titulo {
     color: #117d1a;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font: bold;
     font-size: 40px;
-align-items: left;
-   
+    align-items: left;
+
 }
 
 .main-conteudo {
@@ -52,4 +51,3 @@ align-items: left;
     color: #000000;
     text-align: justify;
 }
-

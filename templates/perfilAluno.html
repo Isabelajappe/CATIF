@@ -1,184 +1,398 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATIF - Perfil de Aluno</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <!-- 
-    <link rel="stylesheet" href="style.css">
-  -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='perfil_aluno.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/perfilAluno.css') }}">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Akshar:wght@400&display=swap" />
 </head>
 
 <body>
+    <div class="perfil-aluno">
+        <header class="header">
 
-    <!-- CABEÇALHO -->
-    <header class="header">
-        <div class="logo">
-            <!-- coloquei um link na logo do Catif, pra sempre direcionar na pag Inicial/Inicio -->
-            <a href="index">
-                <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
+            <img class="logo-icon2" alt="" src="{{ url_for('static', filename='imagens/logo.png') }}" />
 
-                <!--  <img src="imagens/Logo.png" alt="Logo CATIF"> -->
-            </a>
-        </div>
 
-         <!-- MENU -->
-    <nav class="menu">
-      <a href="index">Início</a>
-      <a href="sobre">Sobre</a>
-      <a href="vagas">Vagas</a>
-      <a href="estagio">Estágio</a>
-    </nav>
-
-        <div class="meu-perfil">
-            <!-- BOTÃO -->
-            <a href="#" class="btn">Meu perfil</a>
-        </div>
-    </header>
-
-    <!-- PERFIL DO ALUNO - CURRICULO  -->
-    <div class="bloco-todo">
-
-        <div class="perfil-alunoo">
-            <img src="{{ url_for('static', filename='imagens/fotoPerfil.png') }}">
-
-            <!--    <img class="ft-perfil" src="imagens/fotoPerfil.jpg" alt="foto de perfil"> -->
-
-            <h1 class="nome-aluno">Manuela Camargo</h1>
-            <h2>Técnico em Informática</h2>
-            <button class="baixa-curriculo">
-                BAIXAR
-            </button>
-        </div>
-
-        <div class="sobre-mim">
-            <h2>Sobre mim</h2>
-            <p class="prg-black">Sou estudante do último ano do Curso Técnico em Informática Integrado ao Ensino Médio
-                do Instituto
-                Federal Sul-rio-grandense – Câmpus Sapiranga. Desenvolvi interesse pela área tecnológica e pela
-                resolução de problemas. Possuo mais de um ano de experiência como estagiária na Coordenadoria de
-                Tecnologia da Informação na própria instituição, atuando com suporte técnico, atendimento e solução
-                de
-                demandas.</p>
-
-            <button class="bt-editar">Editar</button>
-
-        </div>
-
-        <div class="objetivos">
-            <h2>Objetivos</h2>
-            <p class="prg-black">Atuar como Técnico em Informática, prestando suporte técnico, manutenção de
-                computadores e auxiliando
-                no
-                desenvolvimento de soluções tecnológicas.</p>
-            <button class="bt-editar">Editar</button>
-
-        </div>
-
-        <div class="form-acad">
-            <div class="inform-escolares">
-                <h2>Formação Acadêmica</h2>
-                <ul class="ul-black">
-                    <li>Curso: Técnico em Informática</li>
-                    <li>Instituição: Instituto Técnico Exemplo</li>
-                    <li>Conclusão: 2026</li>
-                </ul>
-                <button class="bt-editar">Editar</button>
-                <button class="bt-excluir">Excluir</button>
+            <div class="cabealho">
+                <div class="bt-inicio" id="btInicioContainer">
+                    <button class="inicio">Inicio</button>
+                </div>
+                <div class="bt-sobre" id="btSobreContainer">
+                    <button class="inicio">Sobre</button>
+                </div>
+                <div class="bt-sobre" id="btEstagioContainer">
+                    <button class="inicio">Estágio</button>
+                </div>
+                <div class="bt-sobre" id="btVagasContainer">
+                    <button class="inicio">Vagas</button>
+                </div>
+                <div class="perfilaluno">
+                    <h2 class="txtnomealuno">Luana Almeida</h2>
+                    <div class="ftperfilaluno"></div>
+                </div>
             </div>
-
-        </div>
-
-        <div class="experiencia-prof">
-            <h2>Experiência Profissional</h2>
-            <p class="prg-black">Estágio em Suporte Técnico
-                Empresa: Tech Solutions Ltda.
-                Período: 2025 – 2026</p>
-            <h3>Atividades:</h3>
-            <ul class="ul-black">
-                <li>
-                    Manutenção de computadores (hardware e software)
-                </li>
-                <li> Instalação de sistemas operacionais (Windows e Linux)
-                </li>
-                <li>
-                    Atendimento e suporte a usuários
-                </li>
-                <li> Configuração de redes básicas</li>
-            </ul>
-            <button class="bt-editar">Editar</button>
-            <button class="add-experiencia">Adicionar</button>
-        </div>
-
-        <div class="habilidades">
-            <h2>Habilidades Técnicas</h2>
-            <p class="prg-black">Montagem e manutenção de computadores
-                Instalação e configuração de sistemas operacionais
-                Pacote Office (Word, Excel, PowerPoint)
-                Redes de computadores (básico)
-                Lógica de programação
-                Conhecimento em linguagens: HTML, CSS e Java
-                Uso de ferramentas como VS Code e GitHub</p>
-            <button class="bt-editar">Editar</button>
-
-        </div>
-
-
-
-        <div class="cursos">
-            <h2>Cursos</h2>
-
-            <ul class="cursos-complementares">
-                <li>Curso de Lógica de Programação – 40h</li>
-                <li> Curso de Manutenção de Computadores – 60h
-                </li>
-                <li> Curso de Git e GitHub – 20h</li>
-            </ul>
-            <button class="bt-editar">Editar</button>
-
-            <!--
+        </header>
+        <main class="conteudo">
+            <section class="frame-ladoesquerdo">
+                <div class="perfil-aluno2">
+                    <div class="conteudo2">
+                        <div class="frame-foto-perfil">
+                            <div class="icon-foto">
+                                <img src="#" alt="">
+                            </div>
+                        </div>
+                        <h2 class="txtnomealuno2">Luana Almeida</h2>
+                        <h3 class="txtcurso">Técnico em Informática</h3>
+                        <button class="bt-baixar-curriculo">
+                            <div class="baixar-currculo">Baixar Currículo</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="soft-skills">
+                    <button class="btmais">+</button>
+                    <h2 class="titulo-soft-skills">Soft skills</h2>
+                    <b class="txtsoft-skills">
+                        <ul class="python-java-c-c-javascript">
+                            <li>PYTHON</li>
+                            <li>JAVA</li>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </b>
+                </div>
+                <div class="frame-infos-pessoais">
+                    <div class="informacoes-pessoais">
+                        <div class="txtinformacoespessoais">
+                            <h2 class="txtinfopessoais">Informações Pessoais</h2>
+                        </div>
+                        <div class="frame-dados-pessoais">
+                            <div class="nomealuno">
+                                <div class="camponome">
+                                    <h3 class="nome-completo">Nome completo:</h3>
+                                    <h2 class="luana-almeida">Luana Almeida</h2>
+                                </div>
+                                <div class="camponomesocial">
+                                    <h3 class="nome-completo">Nome Social:</h3>
+                                    <h2 class="luana-almeida">-</h2>
+                                </div>
+                            </div>
+                            <div class="datanasc">
+                                <div class="campodatanasc">
+                                    <h3 class="data-de-nascimento">Data de nascimento:</h3>
+                                    <h2 class="luana-almeida">04/09/2007</h2>
+                                </div>
+                            </div>
+                            <div class="datanasc">
+                                <div class="campodatanasc">
+                                    <h3 class="data-de-nascimento">Sexo de nascimento:</h3>
+                                    <h2 class="luana-almeida">Feminino</h2>
+                                </div>
+                            </div>
+                            <div class="genero">
+                                <div class="campogenero">
+                                    <h3 class="genero2">Gênero:</h3>
+                                    <h2 class="txtgenero">Mulher Cisgênero</h2>
+                                </div>
+                            </div>
+                            <div class="estadocivil">
+                                <div class="campoestadocivil">
+                                    <h3 class="genero2">Estado civil:</h3>
+                                    <h2 class="txtestadocivil">Solteira</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bteditarinfos">
+                        <div class="editar-informacoes">Editar</div>
+                    </button>
+                </div>
+                <div class="frame-contato">
+                    <div class="contato">
+                        <div class="txtcontato">
+                            <h2 class="txtcontato2">Contato</h2>
+                        </div>
+                        <div class="conteudo-contato">
+                            <div class="email">
+                                <div class="camponomesocial">
+                                    <h3 class="nome-completo">Nome completo:</h3>
+                                    <h2 class="luana-almeida">luanaalmeida@gmail.com</h2>
+                                </div>
+                            </div>
+                            <div class="datanasc">
+                                <div class="campodatanasc">
+                                    <h3 class="nome-completo">Telefone:</h3>
+                                    <h2 class="txttelefone">(51) 99999-5555</h2>
+                                </div>
+                            </div>
+                            <div class="datanasc">
+                                <div class="campodatanasc">
+                                    <h3 class="nome-completo">Nome do contato:</h3>
+                                    <h2 class="luana-almeida">Luana</h2>
+                                </div>
+                            </div>
+                            <div class="genero">
+                                <div class="campolinkedin">
+                                    <h3 class="linkedin2">LinkedIn:</h3>
+                                    <b class="txtlinkedin">www.linkedin.com/in/luana-almeida</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bteditarinfos2">
+                        <div class="editar-informacoes">Editar</div>
+                    </button>
+                </div>
+            </section>
+            <section class="frame-ladodireito">
+                <section class="frame-sobremim">
             
-      <p>Curso de Lógica de Programação – 40h
-                Curso de Manutenção de Computadores – 60h
-                Curso de Git e GitHub – 20h</p>     -->
+                    <div class="txtsobremim">
+                        <h2 class="sobre-mim">Sobre mim</h2>
+                    </div>
 
+                    <div class="prgfsobremim">
+
+                        <div class="pgfsobremim">
+                            Sou estudante do último ano do curso Técnico em Informática
+                            Integrado ao Ensino Médio do Instituto Federal Sul-rio-grandense
+                            – Câmpus Sapiranga. Desenvolvi interesse pela área tecnológica e
+                            pela resolução de problemas. Possuo mais de um ano de
+                            experiência como estagiária no setor de TI da prefeitura de
+                            Sapiranga, atuando com suporte técnico, atendimento e solução de
+                            demandas.
+                        </div>
+
+                    </div>
+                </section>
+                <section class="frame-infos-escolares">
+                    <div class="frame-infos-escolares-row-0">
+                        <div class="txtinfoescolar">
+                            <h2 class="informaes-escolares">Informações escolares</h2>
+                        </div>
+                       
+                    </div>
+                    <div class="frame-infos-escolares2">
+                        <div class="conteudo-infos-escolares">
+                            <h3 class="turno">Manhã</h3>
+                            <h3 class="semestreano">4º Semestre/ano</h3>
+                            <h3 class="instituicao">
+                                Instituto Federal Sul-rio-grandense - Câmpus Sapiranga
+                            </h3>
+                            <h3 class="curso">Técnico em Informática</h3>
+                        </div>
+                        <img class="frame-icon-editar" alt="" src="./public/frame-Icon-Editar.svg" />
+                    </div>
+                </section>
+                <div class="frame-certificacoes">
+                    <div class="frame-certificacoes-row-0">
+                        <div class="txtcertifcacoes">
+                            <h2 class="certificaes">Certificações</h2>
+                        </div>
+                       
+                    </div>
+                    <section class="frame-certificado">
+                        <div class="frame-conteudo">
+                            <div class="frame-aes">
+                                <img class="frame-icon-editar2" alt="" src="./public/frame-icon-Editar.svg" />
+
+                                <img class="frame-icon-excluir" alt="" src="./public/frame-icon-Excluir.svg" />
+                            </div>
+                            <img class="frame-icon-certificado" alt="" src="./public/frame-icon-certificado.svg" />
+
+                            <h3 class="txt-nomecertificado">
+                                Gerenciamento de Ameaças Cibernéticas
+                            </h3>
+                            <h3 class="txtinstituio">
+                                Instituto Federal Sul-rio-grandense - Câmpus Sapiranga
+                            </h3>
+                            <h3 class="txtdata">mar. 2025</h3>
+                        </div>
+                    </section>
+                    <section class="frame2-certificado">
+                        <div class="frame-conteudo">
+                            <div class="frame-aes">
+                                <img class="frame-icon-editar2" alt="" src="./public/frame-icon-Editar.svg" />
+
+                                <img class="frame-icon-excluir" alt="" src="./public/frame-icon-Excluir.svg" />
+                            </div>
+                            <img class="frame-icon-certificado" alt="" src="./public/frame-icon-certificado.svg" />
+
+                            <h3 class="txt-nomecertificado2">
+                                Grand Prix de Educação - Evento Sapiranga Summit<br />
+                            </h3>
+                            <h3 class="txtinstituio2">Senai</h3>
+                            <h3 class="txtdata">abr. 2022</h3>
+                        </div>
+                    </section>
+                    <section class="frame3-certificado">
+                        <div class="frame-conteudo">
+                            <div class="frame-aes">
+                                <img class="frame-icon-editar2" alt="" src="./public/frame-icon-Editar.svg" />
+
+                                <img class="frame-icon-excluir" alt="" src="./public/frame-icon-Excluir.svg" />
+                            </div>
+                            <img class="frame-icon-certificado" alt="" src="./public/frame-icon-certificado.svg" />
+
+                            <h3 class="txt-nomecertificado3">
+                                Minicurso de Inovação Tecnológica<br />
+                            </h3>
+                            <h3 class="txtinstituio">
+                                Instituto Federal Sul-rio-grandense - Câmpus Sapiranga
+                            </h3>
+                            <h3 class="txtdata3">jun. 2024</h3>
+                        </div>
+                    </section>
+                    <button class="frame-btmostrarmais">
+                        <div class="conteudo-botao">
+                            <img class="framesetaprabaixo-icon" alt="" src="./public/frameSetaPraBaixo.svg" />
+
+                            <div class="ver-mais">Ver mais</div>
+                        </div>
+                    </button>
+                </div>
+                <section class="frame-experienciasprof">
+                    <div class="frame-experienciasprof-row-0">
+                        <div class="txtexperienciaprof">
+                            <h2 class="experincia-profissional">
+                                Experiência Profissional
+                            </h2>
+                        </div>
+                       
+                    </div>
+                    <div class="frame-experiencia-01">
+                        <div class="frame-conteudo4">
+                            <div class="frame-sobre-a-experiencia">
+                                <h3 class="txt-nomecargo">Estagiária</h3>
+                                <h3 class="txtempresa">Prefeitura Sapiranga</h3>
+                                <div class="txtduracao">ago. 2024 - mar. 2026</div>
+                            </div>
+                            <div class="txtdescricao">
+                                Realizo estágio no setor de Coordenadoria de Tecnologia da
+                                Informação (COTIN) - IFSul Câmpus Sapiranga. Esse estágio
+                                proporciona a aplicação dos conhecimentos teóricos adquiridos
+                                nas disciplinas do curso Técnico em Informática,
+                                possibilitando também novos saberes nessa área.
+                            </div>
+                            <div class="frame-aes4">
+                                <img class="frame-icon-editar2" alt="" src="./public/frame-icon-Editar.svg" />
+
+                                <img class="frame-icon-excluir" alt="" src="./public/frame-icon-Excluir.svg" />
+                            </div>
+                        </div>
+                        <img class="design-sem-nome-2-1" alt="" src="./public/Design-sem-nome-2-1.svg" />
+                    </div>
+                </section>
+                <section class="framecursos">
+                    <div class="cursos">
+                        <div class="titcursos">
+                            <h2 class="cursos2">Cursos</h2>
+                        </div>
+                    
+                        <div class="bloco-cursos">
+                            <div class="conteudo-curso">
+                                <div class="tituto-curso">
+                                    <h2 class="txtnomecurso">Curso de Inglês</h2>
+                                </div>
+                                <img class="frame-aes-icon" loading="lazy" alt="" src="./public/frame-a-es@2x.png" />
+
+                                <h3 class="txtinstituicao">FIC IFSul</h3>
+                                <div class="txtano">2025</div>
+                            </div>
+                            <button class="btvercurso">
+                                Ver
+                            </button>
+                        </div>
+                        <div class="bloco-cursos2">
+                            <div class="conteudo-curso">
+                                <div class="tituto-curso2">
+                                    <h2 class="txtnomecurso">Banco de dados</h2>
+                                </div>
+                                <img class="frame-aes-icon" alt="" src="./public/frame-a-es@2x.png" />
+
+                                <h3 class="txtinstituicao2">Plataforma Mundi IFSul</h3>
+                                <div class="txtano">2024</div>
+                            </div>
+                            <button class="btvercurso">
+                                Ver
+                            </button>
+                        </div>
+                        <div class="bloco-cursos3">
+                            <div class="conteudo-curso">
+                                <div class="tituto-curso2">
+                                    <h2 class="txtnomecurso">Informatica Básica</h2>
+                                </div>
+                                <img class="frame-aes-icon" alt="" src="./public/frame-a-es@2x.png" />
+
+                                <h3 class="txtinstituicao2">Plataforma Mundi IFSul</h3>
+                                <div class="txtano">2023</div>
+                            </div>
+                            <button class="btvercurso">
+                                Ver
+                            </button>
+                        </div>
+                        <div class="bloco-cursos4">
+                            <div class="conteudo-curso">
+                                <div class="tituto-curso2">
+                                    <h2 class="txtnomecurso">Front-end</h2>
+                                </div>
+                                <img class="frame-aes-icon" alt="" src="./public/frame-a-es@2x.png" />
+
+                                <h3 class="txtinstituicao4">Alura</h3>
+                                <div class="txtano">2022</div>
+                            </div>
+                            <button class="btvercurso">
+                                Ver
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <div class="frame">
+            <h2 class="catif-todos-os">
+                © 2026 CATIF. Todos os direitos reservados.
+            </h2>
         </div>
-
-
-        <div class="experiencia-prof">
-            <h2>Certificações</h2>
-            <button class="add-experiencia">Adicionar</button>
-
-            <div class="certificado">
-                <h3 class="h3-black">Nome do certificado 1</h3>
-                <button class="bt-editar">Editar</button>
-            </div>
-
-
-            <div class="certificado">
-                <h3 class="h3-black">Nome do certificado 2</h3>
-                <button class="bt-editar">Editar</button>
-            </div>
-
-
-            <div class="certificado">
-                <h3 class="h3-black">Nome do certificado 3</h3>
-                <button class="bt-editar">Editar</button>
-            </div>
-
-
-        </div>
-
     </div>
 
-    </div>
+    <script>
+        var btInicioContainer = document.getElementById("btInicioContainer");
+        if (btInicioContainer) {
+            btInicioContainer.addEventListener("click", function (e) {
+                // Please sync "Pagina Bem vindo" to the project
+            });
+        }
 
+        var btSobreContainer = document.getElementById("btSobreContainer");
+        if (btSobreContainer) {
+            btSobreContainer.addEventListener("click", function (e) {
+                // Please sync "Pagina sobre" to the project
+            });
+        }
+
+        var btEstagioContainer = document.getElementById("btEstagioContainer");
+        if (btEstagioContainer) {
+            btEstagioContainer.addEventListener("click", function (e) {
+                // Please sync "Pagina Estágio" to the project
+            });     
+        }
+
+        var btVagasContainer = document.getElementById("btVagasContainer");
+        if (btVagasContainer) {
+            btVagasContainer.addEventListener("click", function (e) {
+                // Please sync "Pagina Vagas" to the project
+            });
+        }
+    </script>
 </body>
 
 </html>
