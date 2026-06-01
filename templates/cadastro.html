@@ -51,6 +51,9 @@
             <h2 class="titEntrar">Criar conta</h2>
             <!-- Ao invés de 'Entrar' no início do login, eu coloquei 'LOGIN' apenas " -->
 
+        {% if erro %}
+         {{ erro }}
+        {% endif %}
 
             <form method="post" action="/cadastro">
 
@@ -72,11 +75,13 @@
 
 
                 <!-- Outras formas -->
+
+                
 <div class="outrasFormas">
     <p>outras formas</p>
     
     <a class="linkFacebook" href="#">
-        
+        <img class="facebookLogo" src="{{ url_for('static', filename='imagens/linkFacebook.png') }}" alt="facebookLogo">
     </a>
 
     <a class="linkGoogle" href="#">
