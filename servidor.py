@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import mysql.connector
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 
@@ -54,44 +55,80 @@ def estagio():
 
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
+
+    # Se apenas abriu a página
+    if request.method == "GET":
+        return render_template("cadastro.html")
+
+    # Se clicou em cadastrar
     if request.method == "POST":
+
         email = request.form["email"]
-        senha = request.form["senha"]
-        confirmar = request.form["confirmar_senha"]
+        senha_1 = request.form["senha"]
+        senha_2 = request.form["confirmar_senha"]
 
-        if senha != confirmar:
-            return "As senhas não são iguais!"
+        # Verifica se as senhas são iguais
+        if senha_1 != senha_2:
+            return render_template(
+                "cadastro.html",
+                erro="As senhas não coincidem"
+            )
 
+        # Criptografa a senha
+        senha_hash = generate_password_hash(senha_1)
+
+        # Conexão com o banco
         conexao = conectar_db()
         cursor = conexao.cursor()
 
-        query = "SELECT * FROM usuarios WHERE email = %s"
-        cursor.execute(query, (email,))
+        # Verifica se o email já existe
+        sql = "SELECT * FROM usuarios WHERE email = %s"
+        cursor.execute(sql, (email,))
 
-        result = cursor.fetchone() 
+        resultados = cursor.fetchall()
 
-        if result:
-            return("O email já existe")
-        
-        else:
-
-            sql = "INSERT INTO usuarios (email, senha) VALUES (%s, %s)"
-            dados = (email, senha)
-    
-            cursor.execute(sql, dados)
-            conexao.commit()
-
+        if len(resultados) > 0:
             cursor.close()
             conexao.close()
 
-            return render_template("perfilAluno.html")
-    
-    return render_template("cadastro.html")
+            return render_template(
+                "cadastro.html",
+                erro="Email já cadastrado"
+            )
 
-@app.route("/login")
+        # Insere o usuário
+        sql = """
+        INSERT INTO usuarios (email, senha)
+        VALUES (%s, %s)
+        """
+
+        valores = (email, senha_hash)
+
+        cursor.execute(sql, valores)
+
+        # Salva no banco
+        conexao.commit()
+
+        # Fecha conexão
+        cursor.close()
+        conexao.close()
+
+        return """
+        <p>Cadastro realizado com sucesso!</p>
+
+        <a href="/login">
+            <button>Ir para Login</button>
+        </a>
+        """
+
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    
-    return render_template("login.html")
+
+    if request.method == "GET":
+        return render_template("login.html")
+
+    if request.method == "POST":
+        return render_template("perfilAluno.html")
 
 @app.route("/perfilAluno")
 def perfilAluno():
@@ -99,4 +136,3 @@ def perfilAluno():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
