@@ -47,6 +47,14 @@
       <!-- <h2 class="titEntrar">Entrar</h2>  Estava assim --->
       <h2 class="titEntrar">LOGIN</h2> <!-- Ao invés de 'Entrar' no início do login, eu coloquei 'LOGIN' apenas " -->
 
+{% if erro %}
+   <p style="color:red;">
+        {{ erro }}
+    </p>
+ {% endif %}
+
+
+
 
       <form method="POST" action="/login">
 

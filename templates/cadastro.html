@@ -61,6 +61,19 @@
                     <input type="email" name="email" placeholder="Email" required>
                     <!-- campo de email -->
 
+  <select name="tipo" id="tipo">
+    <option value="aluno">Aluno</option>
+    <option value="empresa">Empresa</option>
+</select>
+
+<div id="campo-cnpj" style="display: none;">
+    <input
+    type="text"
+    name="cnpj"
+    id="cnpj"
+    placeholder="00.000.000/0000-00"
+    maxlength="18">
+</div>
                     <input type="password" name="senha" placeholder="Senha" required>
                     <!-- campo de senha -->
 
@@ -143,3 +156,34 @@
         </div>
 
     </footer>
+    <script>
+const tipo = document.getElementById("tipo");
+const campoCnpj = document.getElementById("campo-cnpj");
+
+tipo.addEventListener("change", function() {
+
+    if (tipo.value === "empresa") {
+        campoCnpj.style.display = "block";
+    } else {
+        campoCnpj.style.display = "none";
+    }
+
+});
+</script>
+
+<script>
+const cnpj = document.getElementById("cnpj");
+
+cnpj.addEventListener("input", function() {
+
+    let valor = cnpj.value.replace(/\D/g, "");
+
+    valor = valor.replace(/^(\d{2})(\d)/, "$1.$2");
+    valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+    valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2");
+    valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
+
+    cnpj.value = valor;
+});
+</script>
+</body>
