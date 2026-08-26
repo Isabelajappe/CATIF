@@ -1,274 +1,390 @@
-.header,
-.pagina-ver-vagas {
-  display: flex;
-  align-items: center;
-}
-.pagina-ver-vagas {
-  width: 100%;
-  position: relative;
-  background-color: #fff;
-  flex-direction: column;
-  gap: 100px;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  font-size: 27.1px;
-  color: #fff;
-  font-family: Inter;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+}
+
+/* PÁGINA */
+
+.pagina-ver-vagas {
+    width: 90%;
+    margin: 30px auto 0;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+}
+
+/* CABEÇALHO */
 
 .header {
-  width: 100%;
-  background-color: #359830;
+    width: 100%;
+    height: 70px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background-color: #2ca02c;
 
-  padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  flex-wrap: wrap;
+    padding: 0 50px;
 }
+
+/* LOGO */
 
 .logo-icon {
-  height: 109px;
-  width: 94px;
-  object-fit: cover;
+    width: 65px;
+    height: auto;
+    object-fit: contain;
 }
+
+/* MENU */
+
 .cabealho {
-  margin: 0;
-  width: 447px;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  text-align: left;
-  font-size: 33px;
-  color: #fff;
-  font-family: Inter;
-}
-.bt-inicio {
-  height: 40px;
-  width: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.inicio {
-  margin: 0;
-  position: relative;
-  font-size: inherit;
-  font-weight: 400;
-  font-family: inherit;
-}
-
-.bt-sobre {
-  justify-content: center;
-}
-.bt-entrar,
-.bt-sobre,
-.estagio {
-  display: flex;
-  align-items: center;
-}
-.estagio {
-  margin: 0;
-  width: 116px;
-  position: relative;
-  font-size: inherit;
-  font-weight: 400;
-  font-family: inherit;
-  flex-shrink: 0;
-}
-.bt-entrar {
-  cursor: pointer;
-  border: 2px solid #fff;
-  padding: 13px 0;
-  background-color: #114915;
-  width: 156px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
-  box-sizing: border-box;
-  flex-direction: column;
-  justify-content: center;
-}
-.entrar {
-  width: 96px;
-  position: relative;
-  font-size: 24px;
-  font-family: Barlow;
-  color: #fff;
-  text-align: center;
-}
-.conteudo,
-.entrar,
-.frame-vagas1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.conteudo {
-  width: 100%;
-  background-color: #fff;
-  flex-direction: column;
-  padding: 0 2px 0 0;
-  box-sizing: border-box;
-  gap: 25px;
-  max-width: 1238px;
-}
-.frame-vagas1 {
-  gap: 36px;
-  max-width: 100%;
-}
-.card-vaga,
-.estragio {
-  border-radius: 20px;
-  align-items: center;
-}
-.card-vaga {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: #f5f5f5;
-  border: 2px solid #000;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 20px 33px 37px;
-  gap: 43px;
-  text-align: center;
-  font-size: 32px;
-  color: #fff;
-  font-family: Akshar;
-}
-.estragio {
-  align-self: stretch;
-  height: 46px;
-  background-color: #39a32f;
-  position: relative;
-  isolation: isolate;
-}
-.estagio2,
-.estragio,
-.texto-vaga {
-  display: flex;
-  justify-content: center;
-}
-.estagio2 {
-  margin: 0 !important;
-  height: 46px;
-  width: 304px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: inherit;
-  font-weight: 400;
-  font-family: inherit;
-  align-items: center;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 0;
-}
-.texto-vaga {
-  width: 322px;
-  height: 278px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 7px;
-  text-align: left;
-  color: #000;
-}
-.bolsa-auxlio-r,
-.informtica,
-.presencial,
-.sapiranga {
-  width: 160px;
-  height: 58px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.bolsa-auxlio-r,
-.presencial,
-.sapiranga {
-  width: 146px;
-  height: 60px;
-}
-.bolsa-auxlio-r,
-.presencial {
-  margin: 0;
-  width: 170px;
-  height: 45px;
-  font-size: inherit;
-  font-weight: 400;
-  font-family: inherit;
-}
-.bolsa-auxlio-r {
-  width: 281px;
-  white-space: pre-wrap;
-}
-.btver {
-  cursor: pointer;
-  border: 3px solid #39a32f;
-  padding: 10px;
-  background-color: #114a15;
-  align-self: stretch;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 40px;
-  display: flex;
-  align-items: flex-start;
-}
-.footer,
-.frame-vagas-2,
-.ver {
-  display: flex;
-  align-items: center;
-
-}
-.ver {
-  width: 278px;
-  position: relative;
-  font-size: 36px;
-  font-family: Akshar;
-  color: #fff;
-  text-align: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.footer,
-.frame-vagas-2 {
-  align-self: stretch;
-}
-.frame-vagas-2 {
-  height: 537px;
-  justify-content: space-between;
-  gap: 0;
-  row-gap: 20px;
-  max-width: 100%;
-}
-
-
-@media screen and (max-width: 1275px) {
-  .conteudo {
-    max-width: 100%;
-    width: calc(100% - 40px);
-  }
-  .frame-vagas1 {
-    flex-wrap: wrap;
-  }
-  .frame-vagas-2 {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .pagina-ver-vagas {
-    gap: 50px;
-  }
-}
-@media screen and (max-width: 750px) {
-  .pagina-ver-vagas {
+    display: flex;
+    align-items: center;
     gap: 25px;
-  }
-  .frame-vagas1 {
-    gap: 18px;
-  }
+
+    margin: 0;
+}
+
+.bt-inicio,
+.bt-sobre {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inicio,
+.estagio {
+    margin: 0;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+}
+
+.bt-inicio,
+.bt-sobre {
+    cursor: pointer;
+}
+
+/* ESTÁGIO */
+
+.estagio {
+    width: auto;
+}
+
+/* BOTÃO ENTRAR */
+
+.bt-entrar {
+    cursor: pointer;
+
+    width: 100px;
+    height: 38px;
+
+    padding: 0;
+
+    background-color: #176b20;
+
+    border: 2px solid white;
+    border-radius: 20px;
+
+    box-shadow: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.entrar {
+    width: auto;
+
+    color: white;
+
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+    width: 100%;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 35px 30px;
+
+    gap: 25px;
+
+    max-width: 100%;
+}
+
+/* ÁREA DOS CARDS */
+
+.frame-vagas1 {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+/* CARD DA VAGA */
+
+.card-vaga {
+    width: 330px;
+    min-height: 390px;
+
+    background-color: #f5f5f5;
+
+    border: 1px solid #222;
+    border-radius: 18px;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0 20px 25px;
+
+    gap: 20px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+}
+
+/* TÍTULO DO CARD */
+
+.estragio {
+    width: calc(100% + 40px);
+    height: 45px;
+
+    margin: 0 -20px;
+
+    background-color: #2ca02c;
+
+    border-radius: 18px 18px 0 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.estagio2 {
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    position: static;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: normal;
+
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+
+    text-shadow: none;
+}
+
+/* TEXTO DA VAGA */
+
+.texto-vaga {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    text-align: left;
+
+    color: #222;
+
+    font-family: Arial, sans-serif;
+}
+
+/* INFORMAÇÕES */
+
+.informtica,
+.sapiranga,
+.presencial,
+.bolsa-auxlio-r {
+    width: 100%;
+    height: auto;
+
+    min-height: 35px;
+
+    display: flex;
+    align-items: center;
+
+    color: #222;
+
+    font-size: 16px;
+    font-weight: normal;
+
+    font-family: Arial, sans-serif;
+}
+
+.bolsa-auxlio-r {
+    width: 100%;
+}
+
+/* BOTÃO VER */
+
+.btver {
+    width: 100%;
+
+    height: 40px;
+
+    margin-top: auto;
+
+    cursor: pointer;
+
+    border: 2px solid #2ca02c;
+    border-radius: 20px;
+
+    padding: 0;
+
+    background-color: #176b20;
+
+    box-shadow: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ver {
+    width: auto;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+}
+
+/* SEGUNDA ÁREA DE VAGAS */
+
+.frame-vagas-2 {
+    width: 100%;
+
+    min-height: auto;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+/* FOOTER */
+
+.footer {
+    width: 100%;
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 900px) {
+
+    .header {
+        padding: 0 30px;
+    }
+
+    .cabealho {
+        gap: 15px;
+    }
+
+    .inicio,
+    .estagio {
+        font-size: 14px;
+    }
+
+    .conteudo {
+        padding: 30px 20px;
+    }
+
+    .card-vaga {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .pagina-ver-vagas {
+        width: 100%;
+        margin: 0;
+    }
+
+    .header {
+        height: auto;
+
+        padding: 15px 20px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .logo-icon {
+        width: 55px;
+    }
+
+    .cabealho {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .bt-entrar {
+        width: 90px;
+    }
+
+    .card-vaga {
+        width: 100%;
+        max-width: 330px;
+    }
 }

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Perfil da Empresa - CATIF</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='perfilEmpresa.css') }}">
+
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <a href="inicio">
+
+                <img
+                    src="{{ url_for('static', filename='imagens/Logo.png') }}"
+                    alt="Logo CATIF">
+
+            </a>
+
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="inicio">Início</a>
+
+            <a href="sobre">Sobre</a>
+
+            <a href="vagas">Vagas</a>
+
+            <a href="estagio">Estágio</a>
+
+        </nav>
+
+
+        <div class="acesso-site">
+
+            <a href="{{ url_for('Perfil_Empresa') }}"
+               class="btn">
+
+                Meu perfil
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="container-conteudo">
+
+        <section class="perfil-empresa">
+
+            <h1>Perfil da Empresa</h1>
+
+            <p>Gerencie suas vagas de estágio.</p>
+
+
+            <!-- BOTÃO -->
+
+            <button
+                type="button"
+                class="btEntrar"
+                onclick="abrirFormulario()">
+
+                CADASTRAR VAGA
+
+            </button>
+
+
+            <!-- FORMULÁRIO -->
+
+            <div
+                id="formulario-vaga"
+                class="formulario-vaga"
+                style="display: none;">
+
+                <h2>Cadastrar vaga</h2>
+
+
+                <form
+                    method="POST"
+                    action="{{ url_for('cadastrar_vaga') }}">
+
+
+                    <div class="entrada">
+
+                        <input
+                            type="text"
+                            name="nome_vaga"
+                            placeholder="Nome da vaga"
+                            required>
+
+                    </div>
+
+
+                    <div class="entrada">
+
+                        <select
+                            name="curso"
+                            required>
+
+                            <option value="" disabled selected>
+                                Selecione o curso
+                            </option>
+
+                            <option value="Eletromecânica">
+                                Eletromecânica
+                            </option>
+
+                            <option value="Informática">
+                                Informática
+                            </option>
+
+                            <option value="Ambos">
+                                Eletromecânica e Informática
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="entrada">
+
+                        <input
+                            type="text"
+                            name="cidade"
+                            placeholder="Cidade"
+                            required>
+
+                    </div>
+
+
+                    <div class="entrada">
+
+                        <textarea
+                            name="descricao"
+                            placeholder="Descrição da vaga"
+                            required></textarea>
+
+                    </div>
+
+
+                    <div class="entrada">
+
+                        <textarea
+                            name="requisitos"
+                            placeholder="Requisitos da vaga"
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        class="btEntrar"
+                        type="submit">
+
+                        CADASTRAR VAGA
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- MINHAS VAGAS -->
+
+            <section class="minhas-vagas">
+
+                <h2>Minhas vagas</h2>
+
+
+                {% if vagas %}
+
+                    {% for vaga in vagas %}
+
+                        <div class="card-vaga">
+
+                            <h3>
+                                {{ vaga.nome_vaga }}
+                            </h3>
+
+                            <p>
+                                <strong>Curso:</strong>
+                                {{ vaga.curso }}
+                            </p>
+
+                            <p>
+                                <strong>Cidade:</strong>
+                                {{ vaga.cidade }}
+                            </p>
+
+                            <p>
+                                <strong>Descrição:</strong>
+                                {{ vaga.descricao }}
+                            </p>
+
+                            <p>
+                                <strong>Requisitos:</strong>
+                                {{ vaga.requisitos }}
+                            </p>
+
+                        </div>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <p>
+                        Você ainda não cadastrou nenhuma vaga.
+                    </p>
+
+                {% endif %}
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+
+        <div class="rodape2">
+
+            <ul class="sobre-catif">
+
+                <h3>Sobre o CATIF</h3>
+
+                <li>
+                    <a href="#">Equipe</a>
+                </li>
+
+                <li>
+                    <a href="#">Quem somos</a>
+                </li>
+
+                <li>
+                    <a href="#">Missão</a>
+                </li>
+
+            </ul>
+
+
+            <ul class="nosso-site">
+
+                <h3>Nosso site</h3>
+
+                <li>
+                    <a href="#">Vagas recentes</a>
+                </li>
+
+                <li>
+                    <a href="#">Estágio obrigatório</a>
+                </li>
+
+                <li>
+                    <a href="#">Recomendações</a>
+                </li>
+
+                <li>
+                    <a href="#">Novidades</a>
+                </li>
+
+            </ul>
+
+
+            <ul class="Suporte">
+
+                <h3>Suporte</h3>
+
+                <li>
+                    <a href="#">Contato</a>
+                </li>
+
+                <li>
+                    <a href="#">Reportar problema</a>
+                </li>
+
+            </ul>
+
+
+            <ul class="Sistema">
+
+                <h3>Sistema</h3>
+
+                <li>
+                    <a href="#">Política de privacidade</a>
+                </li>
+
+                <li>
+                    <a href="#">Termos de Uso</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="frase-rodape">
+
+            <p class="rodape-frase">
+                &copy; 2026 CATIF. Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        function abrirFormulario() {
+
+            const formulario =
+                document.getElementById("formulario-vaga");
+
+            if (formulario.style.display === "none") {
+
+                formulario.style.display = "block";
+
+            } else {
+
+                formulario.style.display = "none";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

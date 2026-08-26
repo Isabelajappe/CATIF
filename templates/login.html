@@ -2,19 +2,14 @@
 
 <html lang="pt-br">
 
-</html>
-
 <head>
+
   <meta charset="UTF-8">
+
   <title>Login CATIF</title>
 
-  <!-- 
-    <link rel="stylesheet" href="style.css">
-  -->
-
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
-
 
 </head>
 
@@ -23,137 +18,397 @@
   <!-- CABEÇALHO -->
 
   <header class="bem-vindo">
+
     <div class="logo">
-      <a href="index">
-        <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
-        <!--  <img src="imagens/Logo.png" alt="Logo CATIF"> -->
+
+      <a href="inicio">
+
+        <img
+          src="{{ url_for('static', filename='imagens/Logo.png') }}"
+          alt="Logo CATIF">
 
       </a>
+
     </div>
+
     <h2>Acesse o CATIF!</h2>
+
   </header>
 
 
   <!-- LOGIN -->
 
   <div class="login-container">
+
     <div class="login">
 
-      <img src="{{ url_for('static', filename='imagens/imgLogoColorida.png') }}">
+      <img
+        src="{{ url_for('static', filename='imagens/imgLogoColorida.png') }}"
+        alt="Logo CATIF">
 
 
-      <!-- <img class="logoColorida" src="imagens/imgLogoColorida.png" alt="Logo Colorida Catif"> -->
-
-      <!-- <h2 class="titEntrar">Entrar</h2>  Estava assim --->
-      <h2 class="titEntrar">LOGIN</h2> <!-- Ao invés de 'Entrar' no início do login, eu coloquei 'LOGIN' apenas " -->
-
-{% if erro %}
-   <p style="color:red;">
-        {{ erro }}
-    </p>
- {% endif %}
+      <h2 class="titEntrar">
+        LOGIN
+      </h2>
 
 
+      <!-- MENSAGEM DE ERRO -->
 
+      {% if erro %}
+
+        <p style="color:red;">
+          {{ erro }}
+        </p>
+
+      {% endif %}
+
+
+      <!-- FORMULÁRIO -->
 
       <form method="POST" action="/login">
 
         <div class="entrada">
-          <input type="email" name="email" placeholder="Email" required>
-          <!-- campo de email -->
 
-          <input type="password" name="senha" placeholder="Senha" required>
-          <!-- campo de senha -->
+
+          <!-- TIPO DE USUÁRIO -->
+
+          <select
+            name="tipo"
+            id="tipo"
+            required>
+
+            <option
+              value=""
+              disabled
+              selected>
+
+              Selecione o tipo de usuário
+
+            </option>
+
+            <option value="aluno">
+              Aluno
+            </option>
+
+            <option value="empresa">
+              Empresa
+            </option>
+
+          </select>
+
+
+          <!-- LOGIN -->
+
+          <input
+            type="text"
+            name="login"
+            id="login"
+            placeholder="E-mail"
+            required>
+
+
+          <!-- SENHA -->
+
+          <input
+            type="password"
+            name="senha"
+            placeholder="Senha"
+            required>
 
         </div>
 
 
+        <!-- ESQUECEU A SENHA -->
+
         <a href="#">
-          <p class="esqueceuSenha">Esqueci minha senha</p>
+
+          <p class="esqueceuSenha">
+            Esqueci minha senha
+          </p>
+
         </a>
 
-        <!-- botão -->
-        <button class="btEntrar" type="submit">Entrar</button>
+
+        <!-- BOTÃO -->
+
+        <button
+          class="btEntrar"
+          type="submit">
+
+          Entrar
+
+        </button>
 
 
-        <!--direciona pra pag de cadastro caso não tenha um Login  -->
-        <h3 class="cadastroText">Não tem uma conta?</h3>
-        <a class="cadastro" href="cadastro">Cadastrar-se</a>
+        <!-- CADASTRO -->
+
+        <h3 class="cadastroText">
+          Não tem uma conta?
+        </h3>
+
+        <a
+          class="cadastro"
+          href="cadastro">
+
+          Cadastrar-se
+
+        </a>
 
 
+      </form>
 
-        <!-- Outras formas       
-        <div class="outrasFormas">
-          <p>outras formas</p>
-
-          <a class="linkFacebook" href="https://www.facebook.com/?locale=pt_BR">
-            <img class="facebookLogo" src="imagens/facebookLogo.png" alt="facebookLogo">
-          </a>
-
-          <a class="linkGoogle" href="https://www.google.com/">
-            <img class="googleLogo" src="imagens/googleLogo.png" alt="googleLogo">
-          </a> 
-        -->
     </div>
 
-    </form>
+  </div>
 
-  </div>
-  </div>
 
   <!-- RODAPÉ -->
+
   <footer class="rodape">
 
     <div class="rodape2">
 
+
+      <!-- SOBRE -->
+
       <ul class="sobre-catif">
-        <h3>Sobre o CATIF</h3>
-        <li><a href="#">Equipe</a></li>
-        <li><a href="#">Quem somos</a></li>
-        <li><a href="#">Missão</a></li>
+
+        <h3>
+          Sobre o CATIF
+        </h3>
+
+        <li>
+          <a href="#">
+            Equipe
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            Quem somos
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            Missão
+          </a>
+        </li>
+
       </ul>
+
+
+      <!-- NOSSO SITE -->
 
       <ul class="nosso-site">
-        <h3>Nosso site</h3>
-        <li><a href="#">Vagas recentes</a></li>
-        <li><a href="#">Estagio obrigatório</a></li>
-        <li><a href="#">Recomendações</a></li>
-        <li><a href="#">Novidades</a></li>
+
+        <h3>
+          Nosso site
+        </h3>
+
+        <li>
+          <a href="#">
+            Vagas recentes
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            Estagio obrigatório
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            Recomendações
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            Novidades
+          </a>
+        </li>
+
       </ul>
+
+
+      <!-- SUPORTE -->
 
       <ul class="Suporte">
-        <h3>Suporte</h3>
-        <li><a href="#">Contato</a></li>
-        <li><a href="#">Reportar problema</a></li>
+
+        <h3>
+          Suporte
+        </h3>
+
+        <li>
+          <a href="#">
+            Contato
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            Reportar problema
+          </a>
+        </li>
+
       </ul>
+
+
+      <!-- SISTEMA -->
 
       <ul class="Sistema">
-        <h3>Sistema</h3>
-        <li><a href="#">Política de privacidade</a></li>
-        <li><a href="#">Termos de Uso</a></li>
+
+        <h3>
+          Sistema
+        </h3>
+
+        <li>
+          <a href="#">
+            Política de privacidade
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            Termos de Uso
+          </a>
+        </li>
+
       </ul>
 
+
+      <!-- PARCERIAS -->
+
       <ul class="Parcerias">
-        <h3>Parcerias</h3>
-        <li><a href="https://www.ifsul.edu.br/">Instituto Federal Sul-rio-grandense</a></li>
-        <li><a href="https://www.ufrgs.br/site/">UFRGS</a></li>
-        <li><a href="https://www.feevale.br/">Feevale</a></li>
-        <li><a href="https://www.unisinos.br/">Unisinos</a></li>
-        <li><a href="https://www2.faccat.br/portal/">Faccat</a></li>
-        <li><a href="https://www.instagram.com/fly.hubsapiranga/">FlyHub</a></li>
-        <li><a href="https://www.sapiranga.rs.gov.br/">Prefeitura de Sapiranga</a></li>
+
+        <h3>
+          Parcerias
+        </h3>
+
+        <li>
+          <a href="https://www.ifsul.edu.br/">
+            Instituto Federal Sul-rio-grandense
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.ufrgs.br/site/">
+            UFRGS
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.feevale.br/">
+            Feevale
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.unisinos.br/">
+            Unisinos
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www2.faccat.br/portal/">
+            Faccat
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/fly.hubsapiranga/">
+            FlyHub
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.sapiranga.rs.gov.br/">
+            Prefeitura de Sapiranga
+          </a>
+        </li>
+
       </ul>
 
     </div>
+
+
+    <!-- FRASE DO RODAPÉ -->
+
     <div class="frase-rodape">
-      <p class="rodape-frase"> &copy; 2026 CATIF. Todos os direitos reservados.</p>
+
+      <p class="rodape-frase">
+        &copy; 2026 CATIF. Todos os direitos reservados.
+      </p>
+
     </div>
 
   </footer>
 
 
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const tipo = document.getElementById("tipo");
+
+    const login = document.getElementById("login");
 
 
+    tipo.addEventListener("change", function () {
+
+      if (tipo.value === "empresa") {
+
+        login.type = "text";
+
+        login.placeholder = "CNPJ";
+
+      } else {
+
+        login.type = "email";
+
+        login.placeholder = "E-mail";
+
+      }
+
+    });
+
+
+    /*
+      Formatação do CNPJ
+    */
+
+    login.addEventListener("input", function () {
+
+      if (tipo.value === "empresa") {
+
+        let valor = login.value.replace(/\D/g, "");
+
+        valor = valor.replace(/^(\d{2})(\d)/, "$1.$2");
+
+        valor = valor.replace(
+          /^(\d{2})\.(\d{3})(\d)/,
+          "$1.$2.$3"
+        );
+
+        valor = valor.replace(
+          /\.(\d{3})(\d)/,
+          ".$1/$2"
+        );
+
+        valor = valor.replace(
+          /(\d{4})(\d)/,
+          "$1-$2"
+        );
+
+        login.value = valor;
+
+      }
+
+    });
+
+  </script>
 
 
 </body>

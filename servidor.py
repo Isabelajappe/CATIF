@@ -24,9 +24,9 @@ def home():
 def teste():
     return "Rota de teste OK!"
 
-@app.route("/index")
+@app.route("/inicio")
 def index():
-    return render_template("index.html")
+    return render_template("inicio.html")
 
 @app.route("/sobre")
 def sobre():
@@ -141,60 +141,104 @@ def login():
     if request.method == "GET":
         return render_template("login.html")
 
-    # Enviou o formulário
-    email = request.form["email"]
+    # Dados enviados pelo formulário
+    login_usuario = request.form["login"]
     senha = request.form["senha"]
+    tipo = request.form["tipo"]
 
-    conexao = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="catif"
-    )
-
+    # Conecta ao banco
+    conexao = conectar_db()
     cursor = conexao.cursor()
 
-    sql = "SELECT * FROM usuarios WHERE email = %s AND tipo = %s"
-    valores = (email, tipo)
-    cursor.execute(sql, valores)
+    # ALUNO -> entra usando EMAIL
+    if tipo == "aluno":
 
+        sql = "SELECT * FROM usuarios WHERE email = %s"
+        valores = (login_usuario,)
+
+        cursor.execute(sql, valores)
+
+    # EMPRESA -> entra usando CNPJ
+    elif tipo == "empresa":
+
+        # Remove pontos, barra e hífen do CNPJ
+        cnpj = login_usuario.replace(".", "")
+        cnpj = cnpj.replace("/", "")
+        cnpj = cnpj.replace("-", "")
+
+        sql = "SELECT * FROM usuarios WHERE cnpj = %s"
+        valores = (cnpj,)
+
+        cursor.execute(sql, valores)
+
+    # Tipo inválido
+    else:
+
+        cursor.close()
+        conexao.close()
+
+        return render_template(
+            "login.html",
+            erro="Selecione o tipo de usuário"
+        )
+
+    # Procura o usuário
     usuario = cursor.fetchone()
 
     cursor.close()
     conexao.close()
 
+
+    # Usuário encontrado
     if usuario:
 
-        # usuario[3] = senha hash no banco
+        # Verifica a senha
         if check_password_hash(usuario[3], senha):
-            session['usuario_id'] = usuario[0]
+
+            # Salva o ID do usuário
+            session["usuario_id"] = usuario[0]
+
+            # Salva o tipo do usuário
             session["tipo"] = usuario[4]
 
-            if session['tipo'] == 'aluno':
-                return redirect(url_for('perfilAluno'))
 
-            if session['tipo'] == 'empresa':
-                return redirect(url_for('perfil_empresa'))
+            # Se for aluno
+            if session["tipo"] == "aluno":
 
-           # return redirect(url_for('home'))
+                return redirect(
+                    url_for("perfilAluno")
+                )
 
-            #return render_template("perfilAluno.html")
+
+            # Se for empresa
+            if session["tipo"] == "empresa":
+
+                return redirect(
+                    url_for("Perfil_Empresa")
+                )
+
+
+            # Caso o tipo não seja reconhecido
+            return render_template(
+                "login.html",
+                erro="Tipo de usuário inválido"
+            )
+
 
         else:
+
             return render_template(
                 "login.html",
                 erro="Senha incorreta"
             )
 
+
     else:
+
         return render_template(
             "login.html",
             erro="Usuário não encontrado"
         )
-
-
-
-
 
 
 
@@ -204,7 +248,88 @@ def perfilAluno():
     if session.get('tipo') != 'aluno':
         return redirect(url_for('login'))
 
-    return render_template('perfilAluno.html')
+    return render_template('PerfilAluno.html')
+
+@app.route("/perfil_empresa")
+def Perfil_Empresa():
+
+    # Verifica se é uma empresa
+    if session.get("tipo") != "empresa":
+        return redirect(url_for("login"))
+
+    # Pega o ID da empresa logada
+    id_empresa = session.get("usuario_id")
+
+    # Conecta ao banco
+    conexao = conectar_db()
+    cursor = conexao.cursor(dictionary=True)
+
+    # Busca somente as vagas dessa empresa
+    sql = """
+        SELECT *
+        FROM vagas
+        WHERE id_empresa = %s
+        ORDER BY id_vaga DESC
+    """
+
+    cursor.execute(sql, (id_empresa,))
+
+    vagas = cursor.fetchall()
+
+    cursor.close()
+    conexao.close()
+
+    return render_template(
+        "Perfil_Empresa.html",
+        vagas=vagas
+    )
+
+@app.route("/cadastrar-vaga", methods=["POST"])
+def cadastrar_vaga():
+
+    # Verifica se existe uma empresa logada
+    if session.get("tipo") != "empresa":
+        return redirect(url_for("login"))
+
+    # Pega o ID da empresa logada
+    id_empresa = session.get("usuario_id")
+
+    # Pega os dados do formulário
+    nome_vaga = request.form["nome_vaga"]
+    curso = request.form["curso"]
+    cidade = request.form["cidade"]
+    descricao = request.form["descricao"]
+    requisitos = request.form["requisitos"]
+
+    # Conecta ao banco
+    conexao = conectar_db()
+    cursor = conexao.cursor()
+
+    # Salva a vaga
+    sql = """
+        INSERT INTO vagas
+        (id_empresa, nome_vaga, curso, cidade, descricao, requisitos)
+        VALUES (%s, %s, %s, %s, %s, %s)
+    """
+
+    valores = (
+        id_empresa,
+        nome_vaga,
+        curso,
+        cidade,
+        descricao,
+        requisitos
+    )
+
+    cursor.execute(sql, valores)
+
+    conexao.commit()
+
+    cursor.close()
+    conexao.close()
+
+    # Volta para o perfil da empresa
+    return redirect(url_for("Perfil_Empresa"))
 
 if __name__ == "__main__":
     app.run(debug=True)

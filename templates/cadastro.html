@@ -2,21 +2,11 @@
 
 <html lang="pt-br">
 
-</html>
-
 <head>
     <meta charset="UTF-8">
     <title>Cadastro CATIF</title>
 
-
-    <!-- 
-    <link rel="stylesheet" href="style.css">
-  -->
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}">
-
-
 </head>
 
 <body>
@@ -24,166 +14,316 @@
     <!-- CABEÇALHO -->
 
     <header class="bem-vindo">
-        <div class="logo">
-            <a href="index">
-                <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
 
-                <!-- <img src="imagens/Logo.png" alt="Logo CATIF">  -->
+        <div class="logo">
+            <a href="inicio">
+                <img src="{{ url_for('static', filename='imagens/Logo.png') }}">
             </a>
         </div>
+
         <h2>Cadastre-se no CATIF!</h2>
+
     </header>
 
 
-    <!-- LOGIN -->
+    <!-- CADASTRO -->
 
     <div class="login-container">
+
         <div class="login">
 
             <img src="{{ url_for('static', filename='imagens/imgLogoColorida.png') }}">
 
-            <!---
-            <img class="logoColorida" src="imagens/imgLogoColorida.png" alt="Logo Colorida Catif">
-            -->
-
-
-            <!-- <h2 class="titEntrar">Entrar</h2>  Estava assim --->
             <h2 class="titEntrar">Criar conta</h2>
-            <!-- Ao invés de 'Entrar' no início do login, eu coloquei 'LOGIN' apenas " -->
 
-        {% if erro %}
-         {{ erro }}
-        {% endif %}
+            {% if erro %}
+                <p style="color: red;">{{ erro }}</p>
+            {% endif %}
+
 
             <form method="post" action="/cadastro">
 
                 <div class="entrada">
-                    <input type="email" name="email" placeholder="Email" required>
-                    <!-- campo de email -->
 
-  <select name="tipo" id="tipo">
-    <option value="aluno">Aluno</option>
-    <option value="empresa">Empresa</option>
-</select>
+                    <!-- E-MAIL + TIPO -->
 
-<div id="campo-cnpj" style="display: none;">
-    <input
-    type="text"
-    name="cnpj"
-    id="cnpj"
-    placeholder="00.000.000/0000-00"
-    maxlength="18">
-</div>
-                    <input type="password" name="senha" placeholder="Senha" required>
-                    <!-- campo de senha -->
+                    <div class="email-tipo">
 
-                    <input type="password" name="confirmar_senha" placeholder="Confirme a senha" required>
-                    <!-- campo de senha -->
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="E-mail"
+                            required>
+
+                        <select name="tipo" id="tipo">
+
+                            <option value="aluno">Aluno</option>
+
+                            <option value="empresa">Empresa</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CNPJ -->
+
+                    <div id="campo-cnpj" style="display: none;">
+
+                        <input
+                            type="text"
+                            name="cnpj"
+                            id="cnpj"
+                            placeholder="00.000.000/0000-00"
+                            maxlength="18">
+
+                    </div>
+
+
+                    <!-- SENHA -->
+
+                    <input
+                        type="password"
+                        name="senha"
+                        placeholder="Senha"
+                        required>
+
+
+                    <!-- CONFIRMAR SENHA -->
+
+                    <input
+                        type="password"
+                        name="confirmar_senha"
+                        placeholder="Confirme a senha"
+                        required>
 
                 </div>
 
 
-                <!-- botão -->
-                <button class="btEntrar" type="submit">CADASTRAR-SE</button>
+                <!-- BOTÃO -->
+
+                <button class="btEntrar" type="submit">
+                    CADASTRAR-SE
+                </button>
 
 
-                <!-- Outras formas -->
+                <!-- OUTRAS FORMAS -->
 
-                
-<div class="outrasFormas">
-    <p>outras formas</p>
-    
-    <a class="linkFacebook" href="#">
-        <img class="facebookLogo" src="{{ url_for('static', filename='imagens/linkFacebook.png') }}" alt="facebookLogo">
-    </a>
+                <div class="outrasFormas">
 
-    <a class="linkGoogle" href="#">
-        <img class="googleLogo" src="{{ url_for('static', filename='imagens/googleLogo.png') }}" alt="googleLogo">
-    </a>
-</div>
+                    <p>outras formas</p>
+
+                    <a class="linkFacebook" href="#">
+                        <img
+                            class="facebookLogo"
+                            src="{{ url_for('static', filename='imagens/linkFacebook.png') }}"
+                            alt="Facebook">
+                    </a>
+
+                    <a class="linkGoogle" href="#">
+                        <img
+                            class="googleLogo"
+                            src="{{ url_for('static', filename='imagens/googleLogo.png') }}"
+                            alt="Google">
+                    </a>
+
+                </div>
 
             </form>
 
         </div>
+
     </div>
 
+
     <!-- RODAPÉ -->
+
     <footer class="rodape">
 
         <div class="rodape2">
 
             <ul class="sobre-catif">
+
                 <h3>Sobre o CATIF</h3>
-                <li><a href="#">Equipe</a></li>
-                <li><a href="#">Quem somos</a></li>
-                <li><a href="#">Missão</a></li>
+
+                <li>
+                    <a href="#">Equipe</a>
+                </li>
+
+                <li>
+                    <a href="#">Quem somos</a>
+                </li>
+
+                <li>
+                    <a href="#">Missão</a>
+                </li>
+
             </ul>
+
 
             <ul class="nosso-site">
+
                 <h3>Nosso site</h3>
-                <li><a href="#">Vagas recentes</a></li>
-                <li><a href="#">Estagio obrigatório</a></li>
-                <li><a href="#">Recomendações</a></li>
-                <li><a href="#">Novidades</a></li>
+
+                <li>
+                    <a href="#">Vagas recentes</a>
+                </li>
+
+                <li>
+                    <a href="#">Estagio obrigatório</a>
+                </li>
+
+                <li>
+                    <a href="#">Recomendações</a>
+                </li>
+
+                <li>
+                    <a href="#">Novidades</a>
+                </li>
+
             </ul>
+
 
             <ul class="Suporte">
+
                 <h3>Suporte</h3>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Reportar problema</a></li>
+
+                <li>
+                    <a href="#">Contato</a>
+                </li>
+
+                <li>
+                    <a href="#">Reportar problema</a>
+                </li>
+
             </ul>
+
 
             <ul class="Sistema">
+
                 <h3>Sistema</h3>
-                <li><a href="#">Política de privacidade</a></li>
-                <li><a href="#">Termos de Uso</a></li>
+
+                <li>
+                    <a href="#">Política de privacidade</a>
+                </li>
+
+                <li>
+                    <a href="#">Termos de Uso</a>
+                </li>
+
             </ul>
 
+
             <ul class="Parcerias">
+
                 <h3>Parcerias</h3>
-                <li><a href="https://www.ifsul.edu.br/">Instituto Federal Sul-rio-grandense</a></li>
-                <li><a href="https://www.ufrgs.br/site/">UFRGS</a></li>
-                <li><a href="https://www.feevale.br/">Feevale</a></li>
-                <li><a href="https://www.unisinos.br/">Unisinos</a></li>
-                <li><a href="https://www2.faccat.br/portal/">Faccat</a></li>
-                <li><a href="https://www.instagram.com/fly.hubsapiranga/">FlyHub</a></li>
-                <li><a href="https://www.sapiranga.rs.gov.br/">Prefeitura de Sapiranga</a></li>
+
+                <li>
+                    <a href="https://www.ifsul.edu.br/">
+                        Instituto Federal Sul-rio-grandense
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.ufrgs.br/site/">
+                        UFRGS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.feevale.br/">
+                        Feevale
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.unisinos.br/">
+                        Unisinos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www2.faccat.br/portal/">
+                        Faccat
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.instagram.com/fly.hubsapiranga/">
+                        FlyHub
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.sapiranga.rs.gov.br/">
+                        Prefeitura de Sapiranga
+                    </a>
+                </li>
+
             </ul>
 
         </div>
+
+
         <div class="frase-rodape">
-            <p class="rodape-frase"> &copy; 2026 CATIF. Todos os direitos reservados.</p>
+
+            <p class="rodape-frase">
+                &copy; 2026 CATIF. Todos os direitos reservados.
+            </p>
+
         </div>
 
     </footer>
+
+
+    <!-- SELEÇÃO ALUNO / EMPRESA -->
+
     <script>
-const tipo = document.getElementById("tipo");
-const campoCnpj = document.getElementById("campo-cnpj");
 
-tipo.addEventListener("change", function() {
+        const tipo = document.getElementById("tipo");
+        const campoCnpj = document.getElementById("campo-cnpj");
 
-    if (tipo.value === "empresa") {
-        campoCnpj.style.display = "block";
-    } else {
-        campoCnpj.style.display = "none";
-    }
+        tipo.addEventListener("change", function () {
 
-});
-</script>
+            if (tipo.value === "empresa") {
 
-<script>
-const cnpj = document.getElementById("cnpj");
+                campoCnpj.style.display = "block";
 
-cnpj.addEventListener("input", function() {
+            } else {
 
-    let valor = cnpj.value.replace(/\D/g, "");
+                campoCnpj.style.display = "none";
 
-    valor = valor.replace(/^(\d{2})(\d)/, "$1.$2");
-    valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
-    valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2");
-    valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
+            }
 
-    cnpj.value = valor;
-});
-</script>
+        });
+
+    </script>
+
+
+    <!-- MÁSCARA CNPJ -->
+
+    <script>
+
+        const cnpj = document.getElementById("cnpj");
+
+        cnpj.addEventListener("input", function () {
+
+            let valor = cnpj.value.replace(/\D/g, "");
+
+            valor = valor.replace(/^(\d{2})(\d)/, "$1.$2");
+
+            valor = valor.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
+
+            valor = valor.replace(/\.(\d{3})(\d)/, ".$1/$2");
+
+            valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
+
+            cnpj.value = valor;
+
+        });
+
+    </script>
+
 </body>
+
+</html>

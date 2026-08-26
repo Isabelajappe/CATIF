@@ -1,126 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/*CABEÇALHO*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+}
+
+/* CABEÇALHO */
 
 .bem-vindo {
+    width: 90%;
+    height: 50px;
+    margin: 30px auto 0;
+
+    background-color: #2ca02c;
+
     display: flex;
-    background-color: #117d1a;
-    justify-content: space-between;
     align-items: center;
-    height: 30px;
-    padding: 20px 40px;
+    justify-content: space-between;
+
+    padding: 0 50px;
+}
+
+.logo img {
+    width: 80px;
+    display: block;
 }
 
 .bem-vindo h2 {
-    color: #ffffff;
+    color: white;
+    font-size: 18px;
 }
-/*CABEÇALHO*/
 
+/* ÁREA DO CADASTRO */
 
 .login-container {
-    width: 380px;
-    margin: 0px auto;
-    /* centraliza */
-    background: white;
-}
+    width: 90%;
+    min-height: 400px;
+    margin: 0 auto;
 
-.login {
-    border: 3px solid rgb(43, 131, 53);
-    border-radius: 20px;
-    width: 400px;
-    height: 550px;
-    margin-top: 50px;
-    text-align: center;
-    margin-bottom: 50px;
+    background-color: white;
 
-}
-
-.login input {
-    width: 300px;
-    border-radius: 15px;
-    margin: 10px 0;
-    padding: 10px;
-}
-
-
-.login button {
-    padding: 10px;
-    width: 300px;
-    margin: 15px;
-    background: #3f8f2f;
-    color: white;
-    border: 2px solid #3f8f2f;
-    /*coloquei borda no botao de Entrar*/
-    border-radius: 12px;
-}
-
-.login button:hover {
-    border-color: #0b0f0a;
-    background-color: #14572e;
-}
-
-
-/* BOTÃO CADASTRA-SE */
-.btEntrar {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-}
-/* BOTÃO CADASTRA-SE */
-
-.titEntrar {
-    margin-top: 0%;
-    font: bold;
-}
-
-.esqueceuSenha {
-    color: #0b0f0a;
-    margin-top: 0%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-decoration: underline;
-}
-
-.esqueceuSenha:hover {
-    color: #3f8f2f;
-}
-
-.logoColorida {
-    width: 150px;
-    margin-bottom: 0%;
-}
-
-a .outrasFormas {
     display: flex;
     justify-content: center;
-    gap: 20px;
     align-items: center;
 }
 
-a .outrasFormas  img {
-    width: 40px;
-    height: 40px;
+.login {
+    width: 275px;
+    min-height: 320px;
 
+    margin: 15px 0;
+    padding: 30px 25px;
+
+    border: 1px solid #222;
+    border-radius: 18px;
+
+    background-color: white;
+
+    text-align: center;
 }
 
+/* LOGO COLORIDA */
 
+.login > img {
+    width: 90px;
+    margin-bottom: 18px;
+}
+
+/* TÍTULO */
+
+.titEntrar {
+    color: #168523;
+
+    font-size: 18px;
+    font-weight: normal;
+
+    margin-bottom: 12px;
+}
+
+/* CAMPOS */
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* E-MAIL + TIPO */
+
+.email-tipo {
+    width: 100%;
+
+    display: flex;
+    gap: 8px;
+}
+
+.email-tipo input {
+    width: 68%;
+    height: 34px;
+
+    padding: 0 10px;
+
+    border: 1px solid #aaa;
+    border-radius: 18px;
+
+    font-size: 14px;
+}
+
+.email-tipo select {
+    width: 32%;
+    height: 34px;
+
+    padding: 0 5px;
+
+    border: 1px solid #aaa;
+    border-radius: 18px;
+
+    background-color: white;
+
+    font-size: 12px;
+}
+
+/* CNPJ */
+
+#campo-cnpj {
+    width: 100%;
+}
+
+#campo-cnpj input {
+    width: 100%;
+    height: 34px;
+
+    padding: 0 10px;
+
+    border: 1px solid #aaa;
+    border-radius: 18px;
+
+    font-size: 14px;
+}
+
+/* SENHAS */
+
+.entrada input[type="password"] {
+    width: 100%;
+    height: 34px;
+
+    padding: 0 10px;
+
+    border: 1px solid #aaa;
+    border-radius: 18px;
+
+    font-size: 14px;
+}
+
+/* BOTÃO */
+
+.btEntrar {
+    width: 100%;
+    height: 36px;
+
+    margin-top: 12px;
+
+    border: 1px solid white;
+    border-radius: 20px;
+
+    background-color: #075d13;
+    color: white;
+
+    font-size: 16px;
+    font-weight: normal;
+
+    cursor: pointer;
+}
+
+/* OUTRAS FORMAS */
+
+.outrasFormas {
+    margin-top: 15px;
+}
+
+.outrasFormas p {
+    margin-bottom: 8px;
+
+    color: #555;
+    font-size: 12px;
+}
+
+.facebookLogo,
 .googleLogo {
-    margin-top: 3px;
-    margin-bottom: 0px;
-    width: 60px !important;
-    height: 60px
+    width: 28px;
+    height: 28px;
+
+    margin: 0 4px;
 }
 
-.facebookLogo {
-    margin-top: 0;
-    margin-bottom: 3.5px;
+/* RODAPÉ */
+
+.rodape {
+    width: 90%;
+
+    margin: 0 auto;
+
+    background-color: #2ca02c;
+    color: white;
 }
 
-div.entrada input {
-    border: 2px solid #0b0f0a;
-    outline: none;
-    /* remove a borda do proprio input */
-    box-sizing: border-box;
-    /* nao deixa o input aumentar de tamanho quando a borda fica maior */
+.rodape2 {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 25px 50px;
 }
 
-div.entrada input:hover {
-    border: 2px solid #3abe19;
+.rodape2 ul {
+    list-style: none;
+}
+
+.rodape2 h3 {
+    margin-bottom: 15px;
+
+    font-size: 16px;
+}
+
+.rodape2 li {
+    margin-bottom: 8px;
+}
+
+.rodape2 li a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.frase-rodape {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+    text-align: center;
+
+    padding: 12px;
+}
+
+.rodape-frase {
+    font-size: 13px;
 }
