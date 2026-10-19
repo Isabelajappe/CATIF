@@ -1,0 +1,321 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.header {
+    width: 100%;
+    min-height: 95px;
+
+    background-color: #359830;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 45px;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 105px;
+    height: auto;
+    display: block;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   BOTÃO PERFIL / ENTRAR
+===================================================== */
+
+.acesso-site {
+    display: flex;
+    align-items: center;
+}
+
+.perfil-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    height: 44px;
+
+    background-color: #114915;
+
+    border: 2px solid white;
+    border-radius: 30px;
+
+    color: white !important;
+    text-decoration: none !important;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.perfil-btn:hover {
+    background-color: #176b20;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.rodape {
+    width: 100%;
+    height: 220px;
+
+    background-color: #009b3a;
+    color: white;
+
+    flex-shrink: 0;
+    margin: 0;
+}
+
+
+/* =====================================================
+   PARTE SUPERIOR DO FOOTER
+===================================================== */
+
+.rodape2 {
+    width: 100%;
+    height: 165px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 28px 60px 20px;
+}
+
+
+/* =====================================================
+   LISTAS DO FOOTER
+===================================================== */
+
+.rodape2 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rodape2 h3 {
+    margin: 0 0 15px 0;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.rodape2 li {
+    margin-bottom: 8px;
+}
+
+.rodape2 li a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+.rodape2 li a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   COPYRIGHT
+===================================================== */
+
+.frase-rodape {
+    width: 100%;
+    height: 55px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+}
+
+.rodape-frase {
+    margin: 0;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media screen and (max-width: 900px) {
+
+    .header {
+        padding: 0 35px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .menu {
+        gap: 25px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .perfil-btn {
+        width: 130px;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .rodape2 {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media screen and (max-width: 600px) {
+
+    .header {
+        height: auto;
+        min-height: 80px;
+
+        padding: 15px 20px;
+
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo img {
+        width: 70px;
+    }
+
+    .menu {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 20px;
+    }
+
+    .menu a {
+        font-size: 15px;
+    }
+
+    .perfil-btn {
+        width: 110px;
+        height: 38px;
+
+        font-size: 14px;
+    }
+
+
+    /* FOOTER */
+
+    .rodape {
+        height: auto;
+    }
+
+    .rodape2 {
+        height: auto;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px;
+
+        padding: 25px 20px;
+    }
+
+    .frase-rodape {
+        height: 50px;
+    }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes da vaga</title>
+</head>
+
+<body>
+
+    <button onclick="history.back()">
+        ⬅ Voltar
+    </button>
+
+    <h1>{{ vaga.nome_vaga }}</h1>
+
+    <p><strong>Área:</strong> {{ vaga.area }}</p>
+
+    <p><strong>Cidade:</strong> {{ vaga.cidade }}</p>
+
+    <p><strong>Modalidade:</strong> {{ vaga.modalidade }}</p>
+
+    <p><strong>Bolsa:</strong> R$ {{ vaga.bolsa }}</p>
+
+    <p><strong>Descrição:</strong></p>
+
+    <p>{{ vaga.descricao }}</p>
+
+</body>
+
+</html>

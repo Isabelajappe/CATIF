@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CATIF - Plataforma de vagas de estágio</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+
+        <div class="logo">
+            <a href="{{ url_for('index') }}">
+                <img
+                    src="{{ url_for('static', filename='imagens/Logo.png') }}"
+                    alt="Logo CATIF"
+                >
+            </a>
+        </div>
+
+        <nav class="menu">
+
+            <a href="{{ url_for('index') }}">
+                Início
+            </a>
+
+        
+
+            <a href="{{ url_for('vagas') }}">
+                Vagas
+            </a>
+
+            <a href="{{ url_for('estagio') }}">
+                Estágio
+            </a>
+
+        </nav>
+
+        <div class="acesso-site">
+
+            <a class="cadastra-se" href="{{ url_for('cadastro') }}">
+                Cadastre-se
+            </a>
+
+            <a href="{{ url_for('login') }}" class="btn">
+                Entrar
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main>
+
+        <!-- ÁREA PRINCIPAL DA HOME -->
+
+        <section class="container-conteudo">
+
+            <div class="conteudo">
+
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE O CATIF -->
+
+        <section class="main-conteudo">
+
+            <div class="bloco-left">
+
+                <img
+                    class="menina-catif"
+                    src="{{ url_for('static', filename='imagens/elementoCatif.png') }}"
+                    alt="Ilustração CATIF"
+                >
+
+            </div>
+
+
+            <div class="bloco-right">
+
+                <h1 class="titulo">
+                    SOBRE O CATIF
+                </h1>
+
+                <p class="text-principal">
+
+                    Um site de vagas de estágio desenvolvido por duas estudantes
+                    do curso Técnico em Informática de uma instituição pública
+                    feito para instituições públicas.
+
+                </p>
+
+                <p class="text-dois">
+
+                    O CATIF foi desenvolvido por duas jovens estudantes do curso
+                    Técnico em Informática Éricka Vargas e Isabela Jappe Lorenzeti.
+                    A ideia foi elaborada durante o último ano do curso, como
+                    projeto de conclusão de curso (TCC), sendo orientadas pelo
+                    docente Rafael Theis Dittgen.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+
+        <div class="rodape2">
+
+            <ul class="sobre-catif">
+
+                <h3>Sobre o CATIF</h3>
+
+                <li>
+                    <a href="{{ url_for('sobre') }}">Equipe</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('sobre') }}">Quem somos</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('sobre') }}">Missão</a>
+                </li>
+
+            </ul>
+
+
+            <ul class="nosso-site">
+
+                <h3>Nosso site</h3>
+
+                <li>
+                    <a href="{{ url_for('vagas') }}">
+                        Vagas recentes
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('estagio') }}">
+                        Estágio obrigatório
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Recomendações
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Novidades
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <ul class="Suporte">
+
+                <h3>Suporte</h3>
+
+                <li>
+                    <a href="#">
+                        Contato
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Reportar problema
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <ul class="Sistema">
+
+                <h3>Sistema</h3>
+
+                <li>
+                    <a href="#">
+                        Política de privacidade
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Termos de Uso
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="frase-rodape">
+
+            <p class="rodape-frase">
+                &copy; 2026 CATIF. Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

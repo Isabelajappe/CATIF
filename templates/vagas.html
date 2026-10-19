@@ -1,0 +1,188 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vagas disponíveis | CATIF</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='global.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='vagas.css') }}">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+
+<body>
+
+    <div class="pagina-ver-vagas">
+
+        <!-- CABEÇALHO -->
+        <header class="header">
+
+            <a href="{{ url_for('index') }}" class="link-logo">
+                <img
+                    class="logo-icon"
+                    src="{{ url_for('static', filename='imagens/logo.png') }}"
+                    alt="Logo CATIF"
+                >
+            </a>
+
+            <nav class="cabealho">
+
+                {% if session.get('tipo') == 'empresa' %}
+
+                    <a class="inicio" href="{{ url_for('inicio_empresa') }}">
+                        Início
+                    </a>
+
+                {% elif session.get('tipo') == 'aluno' %}
+
+                    <a class="inicio" href="{{ url_for('perfilAluno') }}">
+                        Início
+                    </a>
+
+                {% else %}
+
+                    <a class="inicio" href="{{ url_for('index') }}">
+                        Início
+                    </a>
+
+                {% endif %}
+
+                <a class="inicio" href="{{ url_for('sobre') }}">
+                    Sobre
+                </a>
+
+                <a class="inicio pagina-atual" href="{{ url_for('vagas') }}">
+                    Vagas
+                </a>
+
+            </nav>
+
+            {% if logado %}
+
+                <a
+                    class="bt-entrar"
+                    href="{{ url_for('perfilAluno') if session.get('tipo') == 'aluno' else url_for('Perfil_Empresa') }}"
+                >
+                    PERFIL
+                </a>
+
+            {% else %}
+
+                <a class="bt-entrar" href="{{ url_for('login') }}">
+                    ENTRAR
+                </a>
+
+            {% endif %}
+
+        </header>
+
+
+        <!-- CONTEÚDO -->
+        <main class="conteudo">
+
+            <section class="area-vagas">
+
+                <div class="cabecalho-vagas">
+                    <h1>Vagas disponíveis</h1>
+                    <p>Confira as oportunidades e encontre uma vaga para você.</p>
+                </div>
+
+                <section class="lista-vagas">
+
+                    {% if vagas %}
+
+                        {% for vaga in vagas %}
+
+                            <article class="card-vaga">
+
+                                <span class="tipo-vaga">
+                                    Estágio
+                                </span>
+
+                                <h2 class="nome-vaga">
+                                    {{ vaga.nome_vaga }}
+                                </h2>
+
+                                <p class="curso-vaga">
+                                    {{ vaga.curso }}
+                                </p>
+
+                                <p class="cidade-vaga">
+                                    {{ vaga.cidade }}
+                                </p>
+
+                                <p class="modalidade-vaga">
+                                    Oportunidade de estágio
+                                </p>
+
+                                <p class="descricao-vaga">
+                                    {{ vaga.descricao }}
+                                </p>
+
+                                <div class="acoes-vaga">
+
+                                    <a
+                                        class="bt-detalhes"
+                                        href="{{ url_for('vaga_detalhes', id=vaga.id_vaga) }}"
+                                    >
+                                        Ver
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <div class="sem-vagas">
+
+                            <h2>Nenhuma vaga disponível</h2>
+
+                            <p>
+                                Ainda não existem vagas cadastradas.
+                                Volte em breve para conferir novas oportunidades!
+                            </p>
+
+                        </div>
+
+                    {% endif %}
+
+                </section>
+
+            </section>
+
+        </main>
+
+
+        <!-- RODAPÉ -->
+        <footer class="footer">
+
+            <a href="{{ url_for('index') }}" class="link-logo-rodape">
+                <img
+                    class="logo-icon2"
+                    src="{{ url_for('static', filename='imagens/logo.png') }}"
+                    alt="Logo CATIF"
+                >
+            </a>
+
+            <p class="texto-rodape">
+                © 2026 CATIF. Todos os direitos reservados.
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
