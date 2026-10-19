@@ -178,9 +178,9 @@ def login():
     senha = request.form["senha"]
     tipo = request.form["tipo"]
 
-    # Conecta ao banco
+    # Conecta ao banco e cria o cursor
     conexao = conectar_db()
-    cursor = conexao.cursor()
+    cursor = conexao.cursor(buffered=True)
 
     # ALUNO -> entra usando EMAIL
     if tipo == "aluno":
@@ -193,7 +193,6 @@ def login():
     # EMPRESA -> entra usando CNPJ
     elif tipo == "empresa":
 
-        # Remove pontos, barra e hífen do CNPJ
         cnpj = login_usuario.replace(".", "")
         cnpj = cnpj.replace("/", "")
         cnpj = cnpj.replace("-", "")
@@ -203,9 +202,7 @@ def login():
 
         cursor.execute(sql, valores)
 
-    # Tipo inválido
     else:
-
         cursor.close()
         conexao.close()
 
@@ -219,6 +216,9 @@ def login():
 
     cursor.close()
     conexao.close()
+
+    # O restante da tua função continua igual:
+    # verificação da senha, criação da sessão e redirecionamento.
 
 
     # Usuário encontrado

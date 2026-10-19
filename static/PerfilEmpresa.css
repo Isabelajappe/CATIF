@@ -1,0 +1,380 @@
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f5f3;
+    color: #26332b;
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.header {
+    width: 100%;
+    min-height: 100px;
+    background-color: #ffffff;
+    border-bottom: 4px solid #238344;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 6%;
+    gap: 25px;
+}
+
+.logo-icon {
+    width: 85px;
+    height: auto;
+    object-fit: contain;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.cabecalho a {
+    color: #26332b;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.cabecalho a:hover {
+    color: #238344;
+}
+
+.bt-entrar {
+    background-color: #238344;
+    color: #ffffff !important;
+    padding: 12px 24px;
+    border: 2px solid #238344;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.bt-entrar:hover {
+    background-color: #176631;
+    border-color: #176631;
+}
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+============================== */
+
+.conteudo {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    min-height: 500px;
+}
+
+.titulo-pagina {
+    margin-bottom: 10px;
+    color: #176631;
+    font-size: 30px;
+}
+
+.subtitulo-pagina {
+    color: #66736a;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* ==============================
+   ÁREA DE AÇÕES
+============================== */
+
+.acoes-empresa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.acoes-empresa h2 {
+    color: #26332b;
+    font-size: 23px;
+}
+
+.bt-cadastrar-vaga {
+    display: inline-block;
+    background-color: #238344;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 22px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.bt-cadastrar-vaga:hover {
+    background-color: #176631;
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   FORMULÁRIO DE CADASTRO
+============================== */
+
+.formulario-vaga {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #dce6dd;
+    border-top: 5px solid #238344;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.formulario-vaga h2 {
+    color: #176631;
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.formulario-vaga form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-campo label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #34483a;
+}
+
+.grupo-campo input,
+.grupo-campo select,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd7cd;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #26332b;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus,
+.grupo-campo textarea:focus {
+    border-color: #238344;
+    box-shadow: 0 0 0 3px rgba(35, 131, 68, 0.12);
+}
+
+.grupo-campo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.bt-salvar-vaga {
+    align-self: flex-start;
+    background-color: #238344;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    padding: 13px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bt-salvar-vaga:hover {
+    background-color: #176631;
+}
+
+/* ==============================
+   LISTA DE VAGAS
+============================== */
+
+.lista-vagas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.card-vaga {
+    background-color: #ffffff;
+    border: 1px solid #dce6dd;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-vaga:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-vaga h3 {
+    color: #176631;
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+.card-vaga p {
+    color: #58665c;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.etiqueta-curso {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #e2f3e6;
+    color: #176631;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.bt-detalhes {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+    background-color: #238344;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.bt-detalhes:hover {
+    background-color: #176631;
+}
+
+/* ==============================
+   MENSAGEM SEM VAGAS
+============================== */
+
+.sem-vagas {
+    background-color: #ffffff;
+    border: 1px dashed #b8cabb;
+    border-radius: 12px;
+    padding: 40px 25px;
+    text-align: center;
+    color: #66736a;
+    line-height: 1.8;
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.footer {
+    width: 100%;
+    min-height: 90px;
+    background-color: #176631;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 900px) {
+    .lista-vagas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header {
+        padding: 15px 4%;
+    }
+
+    .cabecalho {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo-icon {
+        width: 70px;
+    }
+
+    .cabecalho {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .conteudo {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .titulo-pagina {
+        font-size: 25px;
+    }
+
+    .lista-vagas {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario-vaga {
+        padding: 20px;
+    }
+
+    .acoes-empresa {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .bt-salvar-vaga {
+        width: 100%;
+    }
+}
