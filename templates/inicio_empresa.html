@@ -7,9 +7,7 @@
 
     <title>CATIF - Plataforma de vagas de estágio</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='inicio_empresa.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
 </head>
 
 <body>
@@ -19,7 +17,7 @@
     <header class="header">
 
         <div class="logo">
-            <a href="{{ url_for('inicio_empresa') }}">
+            <a href="{{ url_for('index') }}">
                 <img
                     src="{{ url_for('static', filename='imagens/Logo.png') }}"
                     alt="Logo CATIF"
@@ -29,7 +27,7 @@
 
         <nav class="menu">
 
-            <a href="{{ url_for('inicio_empresa') }}">
+            <a href="{{ url_for('index') }}">
                 Início
             </a>
 
@@ -45,8 +43,12 @@
 
         <div class="acesso-site">
 
-            <a href="/perfil_empresa" class="perfil-btn">
-                Perfil
+            <a class="cadastra-se" href="{{ url_for('cadastro') }}">
+                Cadastre-se
+            </a>
+
+            <a href="{{ url_for('login') }}" class="btn">
+                Entrar
             </a>
 
         </div>
@@ -57,16 +59,6 @@
     <!-- CONTEÚDO PRINCIPAL -->
 
     <main>
-
-        <!-- ÁREA PRINCIPAL DA HOME -->
-
-        <section class="container-conteudo">
-
-            <div class="conteudo">
-            </div>
-
-        </section>
-
 
         <!-- SOBRE O CATIF -->
 
@@ -85,22 +77,26 @@
 
             <div class="bloco-right">
 
-                <h1 class="titulo">
-                    SOBRE O CATIF
-                </h1>
+                    <h1 class="titulo">
+                        SOBRE O CATIF
+                    </h1>
 
                 <p class="text-principal">
-                    Um site de vagas de estágio desenvolvido por duas estudantes
+
+                    Plataforma para divulgação de vagas de estágio desenvolvido por estudantes
                     do curso Técnico em Informática de uma instituição pública
                     feito para instituições públicas.
+
                 </p>
 
                 <p class="text-dois">
-                    O CATIF foi desenvolvido por duas jovens estudantes do curso
+
+                    O CATIF, sigla para Contrate Alunos Técnicos do IF foi desenvolvido por duas jovens estudantes do curso
                     Técnico em Informática Éricka Vargas e Isabela Jappe Lorenzeti.
                     A ideia foi elaborada durante o último ano do curso, como
-                    projeto de conclusão de curso (TCC), sendo orientadas pelo
-                    docente Rafael Theis Dittgen.
+                    projeto de pesquisa na disciplina de Projetos II, sendo orientadas pelo
+                    docente Rafael Theis Dittgen e Fernanda Veleda Camacho.
+
                 </p>
 
             </div>
@@ -218,4 +214,4 @@
 
 </body>
 
-</html>
+</html

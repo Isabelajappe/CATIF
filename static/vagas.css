@@ -12,19 +12,23 @@ html {
 }
 
 body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+
     font-family: Arial, sans-serif;
-    background-color: #222;
+    background-color: #ffffff;
     color: #222;
 }
-
 /* PÁGINA */
 
 .pagina-ver-vagas {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: none;
     min-height: 100vh;
-    margin: 30px auto 0;
+    margin: 0;
     background-color: white;
+
     display: flex;
     flex-direction: column;
 }
@@ -130,7 +134,8 @@ body {
     width: 100%;
     max-width: 1050px;
     padding: 22px;
-    background-color: #eaf4e9;
+    border: #114915 solid 2px;
+    border-radius: 15px;
 }
 
 /* TÍTULO DA PÁGINA */

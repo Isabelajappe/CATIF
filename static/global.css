@@ -257,6 +257,323 @@ main {
 
 
 /* =====================================================
+   PADRÃO GLOBAL DO CATIF
+   CABEÇALHO E RODAPÉ
+===================================================== */
+
+/* CABEÇALHO */
+
+.header {
+    width: 100%;
+    min-height: 85px;
+    height: auto;
+    margin: 0;
+    padding: 12px 35px;
+
+    background-color: #359830;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+/* LOGO */
+
+.header .logo img,
+.header .logo-icon,
+.header .logo_catif {
+    display: block;
+    width: 115px;
+    max-width: 100%;
+    max-height: 65px;
+    height: auto;
+    object-fit: contain;
+}
+
+.header .link-logo,
+.header .logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* MENU — classes utilizadas nas diferentes páginas */
+
+.header .menu,
+.header .cabealho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.header .menu a,
+.header .cabealho a,
+.header .inicio {
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.header .menu a:hover,
+.header .cabealho a:hover {
+    text-decoration: underline;
+}
+
+/* BOTÃO DE ACESSO */
+
+.header .acesso-site {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.header .bt-entrar,
+.header .btn,
+.header .perfil-btn {
+    min-width: 110px;
+    min-height: 38px;
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #114915;
+    border: 2px solid #ffffff;
+    border-radius: 22px;
+
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+
+    box-sizing: border-box;
+}
+
+.header .bt-entrar:hover,
+.header .btn:hover,
+.header .perfil-btn:hover {
+    background-color: #237c2b;
+    color: #ffffff;
+}
+
+/* RODAPÉ PADRÃO */
+
+.rodape,
+.footer {
+    width: 100%;
+    margin: 0;
+    flex-shrink: 0;
+
+    background-color: #359830;
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Área superior do rodapé */
+
+.rodape2 {
+    width: 100%;
+    min-height: 165px;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 28px 60px 20px;
+    box-sizing: border-box;
+}
+
+.rodape2 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rodape2 h3 {
+    margin: 0 0 15px;
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.rodape2 li {
+    margin-bottom: 8px;
+}
+
+.rodape2 li a,
+.rodape2 > a {
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.rodape2 a:hover {
+    text-decoration: underline;
+}
+
+/* Copyright */
+
+.frase-rodape {
+    width: 100%;
+    min-height: 55px;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+}
+
+.rodape-frase,
+.texto-rodape,
+.catif-todos-os {
+    margin: 0;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Rodapé compacto da página de vagas */
+
+.footer {
+    min-height: 65px;
+    padding: 12px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer .logo-icon2 {
+    display: block;
+    width: 90px;
+    max-height: 40px;
+    object-fit: contain;
+}
+
+.footer .texto-rodape {
+    font-size: 13px;
+}
+
+/* TABLETS */
+
+@media screen and (max-width: 900px) {
+    .header {
+        padding: 12px 22px;
+        gap: 15px;
+    }
+
+    .header .logo img,
+    .header .logo-icon,
+    .header .logo_catif {
+        width: 90px;
+    }
+
+    .header .menu,
+    .header .cabealho {
+        gap: 18px;
+    }
+
+    .rodape2 {
+        padding: 28px 35px 20px;
+    }
+
+    .footer {
+        padding: 12px 22px;
+    }
+}
+
+/* CELULARES */
+
+@media screen and (max-width: 600px) {
+    .header {
+        min-height: 75px;
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .header .logo img,
+    .header .logo-icon,
+    .header .logo_catif {
+        width: 75px;
+    }
+
+    .header .menu,
+    .header .cabealho {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .header .menu a,
+    .header .cabealho a,
+    .header .inicio {
+        font-size: 14px;
+    }
+
+    .rodape {
+        height: auto;
+    }
+
+    .rodape2 {
+        min-height: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 18px;
+        padding: 25px 20px;
+    }
+
+    .rodape2 h3 {
+        font-size: 15px;
+    }
+
+    .rodape2 li a,
+    .rodape2 > a {
+        font-size: 13px;
+    }
+
+    .footer {
+        padding: 12px 15px;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .rodape2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* =====================================================
    CELULAR
 ===================================================== */
 

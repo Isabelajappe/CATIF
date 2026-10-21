@@ -73,8 +73,8 @@ def vaga_detalhes(id):
 
     conexao = conectar_db()
     cursor = conexao.cursor(dictionary=True)
-
-    sql = "SELECT * FROM vaga WHERE id_vaga = %s"
+    
+    sql = "SELECT * FROM vagas WHERE id_vaga = %s"
     cursor.execute(sql, (id,))
 
     vaga = cursor.fetchone()

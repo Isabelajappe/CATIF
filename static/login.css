@@ -1,200 +1,234 @@
+
+/* CONFIGURAÇÕES GERAIS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+}
+
 body {
+    min-height: 100vh;
+    width: 100%;
     font-family: Arial, sans-serif;
-    background-color: #222;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
 }
 
 /* CABEÇALHO */
-
 .bem-vindo {
-    width: 90%;
-    height: 50px;
-    margin: 30px auto 0;
-
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 5%;
     background-color: #2ca02c;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
+}
 
-    padding: 0 50px;
+.logo {
+    flex-shrink: 0;
 }
 
 .logo img {
-    width: 80px;
     display: block;
+    width: 80px;
+    max-width: 100%;
+    height: auto;
 }
 
 .bem-vindo h2 {
     color: white;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: right;
 }
 
-/* ÁREA DO LOGIN */
-
+/* ÁREA CENTRAL */
 .login-container {
-    width: 90%;
-    min-height: 400px;
-    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+    min-height: 560px;
+    padding: 40px 20px;
 
-    background-color: white;
+    background: linear-gradient(135deg, #ffffff, #f3faf3);
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
+/* CARTÃO DE LOGIN */
 .login {
-    width: 275px;
-    min-height: 320px;
+    width: 100%;
+    max-width: 380px;
+    padding: 32px;
 
-    margin: 15px 0;
-    padding: 30px 25px;
-
-    border: 1px solid #222;
-    border-radius: 18px;
-
-    background-color: white;
+    border: 1px solid #e1e9e1;
+    border-radius: 22px;
+    background-color: #ffffff;
 
     text-align: center;
+    box-shadow: 0 10px 35px rgba(20, 80, 30, 0.12);
 }
-
-/* LOGO COLORIDA */
 
 .login > img {
-    width: 90px;
-    margin-bottom: 18px;
+    display: block;
+    width: 130px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 18px;
+    object-fit: contain;
 }
-
-/* TÍTULO */
 
 .titEntrar {
+    margin-bottom: 22px;
     color: #168523;
-
-    font-size: 18px;
-    font-weight: normal;
-
-    margin-bottom: 12px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
-/* CAMPOS */
+/* FORMULÁRIO */
+.login form {
+    width: 100%;
+}
 
 .entrada {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 13px;
 }
 
-.entrada input {
+.entrada input,
+.entrada select {
+    display: block;
     width: 100%;
-    height: 34px;
+    min-width: 0;
+    height: 45px;
+    padding: 0 13px;
 
-    padding: 0 10px;
+    border: 1px solid #d0d8d0;
+    border-radius: 12px;
 
-    border: 1px solid #aaa;
-    border-radius: 18px;
-
+    background-color: #f8faf8;
+    color: #292929;
+    font-family: Arial, sans-serif;
     font-size: 14px;
 }
 
-.entrada input:focus {
+.entrada input::placeholder {
+    color: #737b73;
+}
+
+.entrada input:focus,
+.entrada select:focus {
     outline: none;
-    border-color: #168523;
+    border-color: #218c32;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(44, 160, 44, 0.13);
+}
+
+/* MENSAGEM DE ERRO */
+.login form > p {
+    margin: 10px 0;
+    font-size: 13px;
+    overflow-wrap: anywhere;
 }
 
 /* ESQUECI MINHA SENHA */
-
-.esqueceuSenha {
-    margin-top: 8px;
-
-    text-align: right;
-
-    font-size: 12px;
-}
-
-.esqueceuSenha a {
-    color: #168523;
+.login form > a {
+    display: block;
+    margin-top: 12px;
     text-decoration: none;
 }
 
-/* BOTÃO */
+.esqueceuSenha {
+    color: #168523;
+    text-align: right;
+    font-size: 13px;
+}
 
+.esqueceuSenha:hover {
+    color: #075d13;
+    text-decoration: underline;
+}
+
+/* BOTÃO ENTRAR */
 .btEntrar {
+    display: block;
     width: 100%;
-    height: 36px;
+    min-height: 45px;
+    margin-top: 20px;
+    padding: 10px 15px;
 
-    margin-top: 12px;
+    border: 2px solid #087522;
+    border-radius: 12px;
+    background-color: #087522;
+    color: #ffffff;
 
-    border: 1px solid white;
-    border-radius: 20px;
-
-    background-color: #075d13;
-    color: white;
-
+    font-family: Arial, sans-serif;
     font-size: 16px;
-    font-weight: normal;
-
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .btEntrar:hover {
     background-color: #064d10;
 }
 
-/* CADASTRO */
-
+/* LINK PARA CADASTRO */
 .cadastroText {
-    margin-top: 15px;
-
-    color: #555;
-
-    font-size: 12px;
+    margin-top: 22px;
+    color: #626962;
+    font-size: 13px;
     font-weight: normal;
 }
 
 .cadastro {
     display: inline-block;
-
-    margin-top: 5px;
-
+    margin-top: 7px;
     color: #168523;
-
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
-
     text-decoration: none;
 }
 
+.cadastro:hover {
+    color: #075d13;
+    text-decoration: underline;
+}
+
 /* RODAPÉ */
-
 .rodape {
-    width: 90%;
-
-    margin: 0 auto;
-
+    width: 100%;
+    margin-top: auto;
     background-color: #2ca02c;
     color: white;
 }
 
 .rodape2 {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-
-    padding: 25px 50px;
+    gap: 25px;
+    padding: 30px 5%;
 }
 
 .rodape2 ul {
+    min-width: 0;
+    max-width: 100%;
     list-style: none;
 }
 
 .rodape2 h3 {
     margin-bottom: 15px;
-
     font-size: 16px;
 }
 
@@ -205,18 +239,83 @@ body {
 .rodape2 li a {
     color: white;
     text-decoration: none;
-
     font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.rodape2 li a:hover {
+    text-decoration: underline;
 }
 
 .frase-rodape {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
-
-    text-align: center;
-
     padding: 12px;
+    text-align: center;
 }
 
 .rodape-frase {
     font-size: 13px;
+}
+
+/* TABLETS E CELULARES */
+@media screen and (max-width: 700px) {
+    .bem-vindo {
+        min-height: 70px;
+        padding: 12px 20px;
+    }
+
+    .logo img {
+        width: 65px;
+    }
+
+    .bem-vindo h2 {
+        font-size: 17px;
+    }
+
+    .login-container {
+        min-height: 480px;
+        padding: 30px 16px;
+    }
+
+    .login {
+        max-width: 380px;
+        padding: 28px 22px;
+    }
+
+    .login > img {
+        width: 115px;
+    }
+
+    .titEntrar {
+        font-size: 23px;
+    }
+
+    .rodape2 {
+        padding: 25px 20px;
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .bem-vindo {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .bem-vindo h2 {
+        font-size: 15px;
+    }
+
+    .login {
+        padding: 25px 18px;
+    }
+
+    .entrada input,
+    .entrada select {
+        font-size: 13px;
+    }
+
+    .rodape2 {
+        flex-direction: column;
+    }
 }

@@ -3,28 +3,202 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Detalhes da vaga</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CATIF - Plataforma de vagas de estágio</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='detalhes_vaga.css') }}">
+    
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='global.css') }}">
 </head>
 
 <body>
 
-    <button onclick="history.back()">
-        ⬅ Voltar
-    </button>
+    <!-- CABEÇALHO -->
 
-    <h1>{{ vaga.nome_vaga }}</h1>
+    <header class="header">
 
-    <p><strong>Área:</strong> {{ vaga.area }}</p>
+        <div class="logo">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='imagens/Logo.png') }}" alt="Logo CATIF">
+            </a>
+        </div>
 
-    <p><strong>Cidade:</strong> {{ vaga.cidade }}</p>
+        <nav class="menu">
 
-    <p><strong>Modalidade:</strong> {{ vaga.modalidade }}</p>
+            <a href="{{ url_for('index') }}">
+                Início
+            </a>
 
-    <p><strong>Bolsa:</strong> R$ {{ vaga.bolsa }}</p>
 
-    <p><strong>Descrição:</strong></p>
 
-    <p>{{ vaga.descricao }}</p>
+            <a href="{{ url_for('vagas') }}">
+                Vagas
+            </a>
+
+            <a href="{{ url_for('estagio') }}">
+                Estágio
+            </a>
+
+        </nav>
+
+        <div class="acesso-site">
+
+            <a class="cadastra-se" href="{{ url_for('cadastro') }}">
+                Cadastre-se
+            </a>
+
+            <a href="{{ url_for('login') }}" class="btn">
+                Entrar
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main>
+
+        <section class="main-conteudo">
+
+            <div class="bloco-left">
+
+                <h1 class="titulo-sp">SUPORTE TÉCNICO</h1>
+
+                <h2>Sapiranga/RS</h2>
+                <h2>Presencial</h2>
+
+                <h2 class="habili">HABILIDADES:</h2>
+                <ul class="lista-habilidades">
+                    <li>Conhecimento com ERP</li>
+                    <li>Configuração e manutenção de hardware</li>
+                    <li>Suporte técnico a usuários</li>
+                </ul>
+            </div>
+
+            <div class="bloco-right">
+                <div>
+                    <p>Atuação no suporte técnico de primeiro nível (N1), prestando atendimento a usuários,
+                        identificando falhas e aplicando soluções em ambientes Windows, redes e aplicações. Responsável
+                        pela abertura, acompanhamento e resolução de chamados, garantindo agilidade e qualidade no
+                        atendimento.</p>
+                    <button class="candidatura">CANDIDATAR-SE</button>
+                </div>
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+
+        <div class="rodape2">
+
+            <ul class="sobre-catif">
+
+                <h3>Sobre o CATIF</h3>
+
+                <li>
+                    <a href="{{ url_for('sobre') }}">Equipe</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('sobre') }}">Quem somos</a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('sobre') }}">Missão</a>
+                </li>
+
+            </ul>
+
+
+            <ul class="nosso-site">
+
+                <h3>Nosso site</h3>
+
+                <li>
+                    <a href="{{ url_for('vagas') }}">
+                        Vagas recentes
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('estagio') }}">
+                        Estágio obrigatório
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Recomendações
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Novidades
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <ul class="Suporte">
+
+                <h3>Suporte</h3>
+
+                <li>
+                    <a href="#">
+                        Contato
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Reportar problema
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <ul class="Sistema">
+
+                <h3>Sistema</h3>
+
+                <li>
+                    <a href="#">
+                        Política de privacidade
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Termos de Uso
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="frase-rodape">
+
+            <p class="rodape-frase">
+                &copy; 2026 CATIF. Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
 
 </body>
 
