@@ -24,6 +24,7 @@ def home():
 def teste():
     return "Rota de teste OK!"
 
+
 @app.route("/inicio")
 def index():
     return render_template("inicio.html")
@@ -31,15 +32,18 @@ def index():
 
 @app.route("/inicio_empresa")
 def inicio_empresa():
+    return redirect(url_for("index"))
 
-    if session.get("tipo") != "empresa":
-        return redirect(url_for("login"))
 
-    return render_template("inicio_empresa.html")
 
 @app.route("/sobre")
 def sobre():
-    return render_template("sobre.html")
+    return render_template(
+        "sobre.html",
+        logado="usuario_id" in session,
+        tipo=session.get("tipo")
+    )
+
 @app.route("/vagas")
 def vagas():
 

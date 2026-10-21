@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,6 +32,7 @@
                 Início
             </a>
 
+
             <a href="{{ url_for('vagas') }}">
                 Vagas
             </a>
@@ -43,13 +45,33 @@
 
         <div class="acesso-site">
 
-            <a class="cadastra-se" href="{{ url_for('cadastro') }}">
-                Cadastre-se
-            </a>
+            {% if session.get('usuario_id') %}
 
-            <a href="{{ url_for('login') }}" class="btn">
-                Entrar
-            </a>
+                {% if session.get('tipo') == 'empresa' %}
+
+                    <a href="{{ url_for('Perfil_Empresa') }}" class="btn">
+                        Meu perfil
+                    </a>
+
+                {% elif session.get('tipo') == 'aluno' %}
+
+                    <a href="{{ url_for('perfilAluno') }}" class="btn">
+                        Meu perfil
+                    </a>
+
+                {% endif %}
+
+            {% else %}
+
+                <a class="cadastra-se" href="{{ url_for('cadastro') }}">
+                    Cadastre-se
+                </a>
+
+                <a href="{{ url_for('login') }}" class="btn">
+                    Entrar
+                </a>
+
+            {% endif %}
 
         </div>
 
@@ -59,8 +81,6 @@
     <!-- CONTEÚDO PRINCIPAL -->
 
     <main>
-
-        <!-- SOBRE O CATIF -->
 
         <section class="main-conteudo">
 
@@ -74,29 +94,27 @@
 
             </div>
 
-
             <div class="bloco-right">
 
-                    <h1 class="titulo">
-                        SOBRE O CATIF
-                    </h1>
+                <h1 class="titulo">
+                    SOBRE O CATIF
+                </h1>
 
                 <p class="text-principal">
-
-                    Plataforma para divulgação de vagas de estágio desenvolvido por estudantes
-                    do curso Técnico em Informática de uma instituição pública
-                    feito para instituições públicas.
-
+                    Plataforma para divulgação de vagas de estágio
+                    desenvolvida por estudantes do curso Técnico em
+                    Informática de uma instituição pública, feita para
+                    instituições públicas.
                 </p>
 
                 <p class="text-dois">
-
-                    O CATIF, sigla para Contrate Alunos Técnicos do IF foi desenvolvido por duas jovens estudantes do curso
-                    Técnico em Informática Éricka Vargas e Isabela Jappe Lorenzeti.
-                    A ideia foi elaborada durante o último ano do curso, como
-                    projeto de pesquisa na disciplina de Projetos II, sendo orientadas pelo
-                    docente Rafael Theis Dittgen e Fernanda Veleda Camacho.
-
+                    O CATIF, sigla para Contrate Alunos Técnicos do IF,
+                    foi desenvolvido por duas jovens estudantes do curso
+                    Técnico em Informática, Éricka Vargas e Isabela Jappe
+                    Lorenzeti. A ideia foi elaborada durante o último ano
+                    do curso, como projeto de pesquisa na disciplina de
+                    Projetos II, sendo orientadas pelo docente Rafael
+                    Theis Dittgen e Fernanda Veleda Camacho.
                 </p>
 
             </div>
